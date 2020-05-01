@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Silvio Gregorini</title>
-    <link>https://s-gregorini003.github.io/</link>
-    <description>Recent content on Silvio Gregorini</description>
+    <title>Pages on Silvio Gregorini</title>
+    <link>https://s-gregorini003.github.io/page/</link>
+    <description>Recent content in Pages on Silvio Gregorini</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>youremail@domain.com (Silvio Gregorini)</managingEditor>
     <webMaster>youremail@domain.com (Silvio Gregorini)</webMaster>
     <lastBuildDate>Fri, 01 May 2020 13:03:37 +0100</lastBuildDate>
     
-	<atom:link href="https://s-gregorini003.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://s-gregorini003.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -19,15 +19,6 @@
       <author>youremail@domain.com (Silvio Gregorini)</author>
       <guid>https://s-gregorini003.github.io/page/about/</guid>
       <description>Hi! My name&amp;rsquo;s Silvio</description>
-    </item>
-    
-    <item>
-      <title>First Post</title>
-      <link>https://s-gregorini003.github.io/post/hello/</link>
-      <pubDate>Fri, 01 May 2020 12:38:19 +0100</pubDate>
-      <author>youremail@domain.com (Silvio Gregorini)</author>
-      <guid>https://s-gregorini003.github.io/post/hello/</guid>
-      <description>Hello, this is my first post in my new website!</description>
     </item>
     
   </channel>
