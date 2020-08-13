@@ -59,7 +59,7 @@
   "headline": "3D Printed Acoustic Absorbers",
   "description" : "Abstract This blog post is to summarise a research project conducted at the beginning of 2019 as part of the Advanced Audio Engineering module (MSc Audio Engineering, Leeds Beckett University). The project discusses the potentials of achieving high performance in terms of sound absorption through additive manufacturing techniques.\nThe absorbers are designed to exploit the principle of passive destructive interference (PDI) and manufactured using a commercially available fused deposition modeling (FDM) 3D printer.",
   "inLanguage" : "en",
-  "wordCount":  641 ,
+  "wordCount":  685 ,
   "datePublished" : "2020-06-10T08:45:42",
   "dateModified" : "2020-06-10T08:45:42",
   "image" : "https:\/\/s-gregorini003.github.io\/img\/avatar-icon.png",
@@ -259,7 +259,7 @@ if (!doNotTrack) {
     &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;4&nbsp;minutes
   
   
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;641&nbsp;words
+    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;685&nbsp;words
   
   
     
@@ -291,7 +291,6 @@ if (!doNotTrack) {
 <hr>
 <h2 id="introduction">Introduction</h2>
 <p>The aim of the project is to design and manufacture Passive Destructive Interference (PDI) absorbers using Additive Manufacturing (AM) techniques and then to evaluate their performance through a low cost, self-built impedance tube. The main outcome of the measurement process is a set of diagrams of the normal absorption factor of the specimens as a function of frequency in a mid-low spectrum range. The sound absorption curves will be then analyzed to determine the effects of the tested geometries and to verify if the experimental results agree with the values expected from the samples in the design phase.</p>
-<!-- raw HTML omitted -->
 <h2 id="theory-and-methodology">Theory and Methodology</h2>
 <p>The investigated devices are designed to absorb specific frequencies through passive destructive interference. These frequencies depend mainly on the specimen&rsquo;s geometry, and can be calculated in advance through the following equation</p>
 
@@ -320,7 +319,22 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-<p>The measurement of the absorption coefficient was conducted according to the <em>two-micophone technique</em> detailed in <a href="https://shop.bsigroup.com/ProductDetail?pid=000000000030069842">BS EN ISO 10534-2:2001</a>. The biggest issue faced in this project was to find an impedance tube to conduct the evaluation. Since my university had part of the equipment (microphones, soundcard, speakers&hellip;), in the end I decided to build a low-cost impedance tube. I built it out of pvc pipes and hydraulic seals, and calibrated at the best of my possibilities. The software used to measure the cross-transfer function and calculate the coefficient is <a href="https://www.holmarc.com/softwares/impedance_tube_software.rar">Holmarc Wave Analyzer 4C </a>.</p>
+<p>I designed the samples in SolidWorks and manufactured with an AthorBot Brother Desktop 3D Printer. To test different materials, both geometries were printed in ABS and PETG.</p>
+
+
+<div class="box" >
+  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <div class="img">
+      <img itemprop="thumbnail" src="/img/aae/specimen1.jpg" alt="Two specimen used for measurement."/>
+    </div>
+    <a href="/img/aae/specimen1.jpg" itemprop="contentUrl"></a>
+      <figcaption>
+          <p>Two specimen used for measurement.</p>
+      </figcaption>
+  </figure>
+</div>
+
+<p>The measurement of the absorption coefficient was conducted according to the <em>two-micophone technique</em> detailed in <a href="https://shop.bsigroup.com/ProductDetail?pid=000000000030069842">BS EN ISO 10534-2:2001</a>. The biggest issue faced in this project was to find an impedance tube to conduct the evaluation. Since my university had part of the equipment (microphones, soundcard, speakers&hellip;), in the end I decided to build a low-cost impedance tube. I built it out of pvc pipes, hydraulic seals, and I added an Arduino Uno with an OLED display and temperature/humidity sensors to keep track of the environmental conditions. To calibrate the tube and conduct the measuring process - which consisted in measuring the cross-transfer function and then calculating the absorption coefficient - I used the software <a href="https://www.holmarc.com/softwares/impedance_tube_software.rar">Holmarc Wave Analyzer 4C </a>.</p>
 
 
 <div class="box" >
@@ -335,54 +349,6 @@ if (!doNotTrack) {
   </figure>
 </div>
 
-
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/aae/specimen.jpg" alt="Two specimen used for measurement."/>
-    </div>
-    <a href="/img/aae/specimen.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Two specimen used for measurement.</p>
-      </figcaption>
-  </figure>
-</div>
-
-
-
-
-<div class="gallery caption-position-bottom caption-effect-fade hover-effect-zoom hover-transition" itemscope itemtype="http://schema.org/ImageGallery">
-	   
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('https://s-gregorini003.github.io//img/aae/TestEquipmentDiagram-thumb.png');">
-      <img itemprop="thumbnail" src="/img/aae/TestEquipmentDiagram-thumb.png" alt="Measurement test equipment layout."/>
-    </div>
-    <a href="/img/aae/TestEquipmentDiagram.png" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Measurement test equipment layout.</p>
-      </figcaption>
-  </figure>
-</div>
- 
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img" style="background-image: url('https://s-gregorini003.github.io//img/aae/specimen-thumb.jpg');">
-      <img itemprop="thumbnail" src="/img/aae/specimen-thumb.jpg" alt="Two specimen used for measurement."/>
-    </div>
-    <a href="/img/aae/specimen.jpg" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Two specimen used for measurement.</p>
-      </figcaption>
-  </figure>
-</div>
- 
-</div>
-
-<!-- raw HTML omitted -->
 <h2 id="findings">Findings</h2>
 <p>For each specimenh, measurements are taken in the frequency interval 100-3200 Hz. The normal sound absorption curves are analysed through the evaluation of two values:</p>
 <ul>
