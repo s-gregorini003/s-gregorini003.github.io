@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>silvio.gregorini@gmail.com (Silvio Gregorini)</managingEditor>
     <webMaster>silvio.gregorini@gmail.com (Silvio Gregorini)</webMaster>
-    <lastBuildDate>Mon, 24 Aug 2020 09:31:28 +0100</lastBuildDate>
-    
-	<atom:link href="https://s-gregorini003.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 24 Aug 2020 09:31:28 +0100</lastBuildDate><atom:link href="https://s-gregorini003.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Send Large JSON Data to IoT Hub Using MQTT</title>
       <link>https://s-gregorini003.github.io/post/nano33iotazure/</link>

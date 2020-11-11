@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>silvio.gregorini@gmail.com (Silvio Gregorini)</managingEditor>
     <webMaster>silvio.gregorini@gmail.com (Silvio Gregorini)</webMaster>
-    <lastBuildDate>Fri, 01 May 2020 13:03:37 +0100</lastBuildDate>
-    
-	<atom:link href="https://s-gregorini003.github.io/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 01 May 2020 13:03:37 +0100</lastBuildDate><atom:link href="https://s-gregorini003.github.io/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About Me</title>
       <link>https://s-gregorini003.github.io/page/about/</link>

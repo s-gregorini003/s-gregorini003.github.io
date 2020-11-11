@@ -6,10 +6,6 @@
     <description>Recent content in Tags on Silvio Gregorini</description>
     <generator>Hugo -- gohugo.io</generator>
     <managingEditor>silvio.gregorini@gmail.com (Silvio Gregorini)</managingEditor>
-    <webMaster>silvio.gregorini@gmail.com (Silvio Gregorini)</webMaster>
-    
-	<atom:link href="https://s-gregorini003.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <webMaster>silvio.gregorini@gmail.com (Silvio Gregorini)</webMaster><atom:link href="https://s-gregorini003.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
