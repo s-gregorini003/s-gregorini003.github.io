@@ -1,290 +1,143 @@
 <!DOCTYPE html>
-<html lang="en" itemscope itemtype="http://schema.org/WebPage">
-  <head>
-    
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="Silvio Gregorini ">
+<meta name="description" content="This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&amp;rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called AzureIoTHub and is the IoT Hub&amp;rsquo;s official Arduino library, published by Azure as a port of the Microsoft Azure IoT device SDK for C)." />
+<meta name="keywords" content="" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="https://s-gregorini003.github.io/post/nano33iotazure/" />
 
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Send Large JSON Data to IoT Hub Using MQTT - Silvio Gregorini</title>
-  <meta name="description" content="How to Connect Arduino Nano 33 IoT and Azure IoT Hub">
-  <meta name="author" content="Silvio Gregorini"/><script type="application/ld+json">
-{
-    "@context": "http://schema.org",
-    "@type": "WebSite",
-    "name": "Silvio Gregorini",
-    
-    "url": "https:\/\/s-gregorini003.github.io\/"
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Organization",
-  "name": "",
-  "url": "https:\/\/s-gregorini003.github.io\/"
-  
-  
-  
-  
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@id": "https:\/\/s-gregorini003.github.io\/",
-          "name": "home"
-        }
-    },{
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@id": "https:\/\/s-gregorini003.github.io\/post\/nano33iotazure\/",
-          "name": "Send large j s o n data to io t hub using m q t t"
-        }
-    }]
-}
-</script><script type="application/ld+json">
-{
-  "@context": "http://schema.org",
-  "@type": "Article",
-  "author": {
-    "name" : "Silvio Gregorini"
-  },
-  "headline": "Send Large JSON Data to IoT Hub Using MQTT",
-  "description" : "This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there\x26rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called AzureIoTHub and is the IoT Hub\x26rsquo;s official Arduino library, published by Azure as a port of the Microsoft Azure IoT device SDK for C).",
-  "inLanguage" : "en",
-  "wordCount":  1027 ,
-  "datePublished" : "2020-08-24T09:31:28",
-  "dateModified" : "2020-08-24T09:31:28",
-  "image" : "https:\/\/s-gregorini003.github.io\/img\/avatar-icon.png",
-  "keywords" : [ "" ],
-  "mainEntityOfPage" : "https:\/\/s-gregorini003.github.io\/post\/nano33iotazure\/",
-  "publisher" : {
-    "@type": "Organization",
-    "name" : "https:\/\/s-gregorini003.github.io\/",
-    "logo" : {
-        "@type" : "ImageObject",
-        "url" : "https:\/\/s-gregorini003.github.io\/img\/avatar-icon.png",
-        "height" :  60 ,
-        "width" :  60
-    }
-  }
-}
-</script>
+    <title>
+        
+            Send Large JSON Data to IoT Hub Using MQTT :: s-gregorini003 
+        
+    </title>
 
-<meta property="og:title" content="Send Large JSON Data to IoT Hub Using MQTT" />
-<meta property="og:description" content="How to Connect Arduino Nano 33 IoT and Azure IoT Hub">
-<meta property="og:image" content="https://s-gregorini003.github.io/img/avatar-icon.png" />
+
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.5.0/css/flag-icon.min.css" rel="stylesheet"
+    type="text/css">
+
+
+
+<link rel="stylesheet" href="/main.393856bf2c430bb6c01d7af07c6fe966e7cce8073435cfbbc46e590bab7405ef.css">
+
+
+
+
+
+
+<meta itemprop="name" content="Send Large JSON Data to IoT Hub Using MQTT">
+<meta itemprop="description" content="This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called AzureIoTHub and is the IoT Hub&rsquo;s official Arduino library, published by Azure as a port of the Microsoft Azure IoT device SDK for C).">
+<meta itemprop="datePublished" content="2020-08-24T09:31:28+01:00" />
+<meta itemprop="dateModified" content="2020-08-24T09:31:28+01:00" />
+<meta itemprop="wordCount" content="1027">
+<meta itemprop="image" content="https://s-gregorini003.github.io/"/>
+
+
+
+<meta itemprop="keywords" content="" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://s-gregorini003.github.io/"/>
+
+<meta name="twitter:title" content="Send Large JSON Data to IoT Hub Using MQTT"/>
+<meta name="twitter:description" content="This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called AzureIoTHub and is the IoT Hub&rsquo;s official Arduino library, published by Azure as a port of the Microsoft Azure IoT device SDK for C)."/>
+
+
+
+    <meta property="og:title" content="Send Large JSON Data to IoT Hub Using MQTT" />
+<meta property="og:description" content="This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called AzureIoTHub and is the IoT Hub&rsquo;s official Arduino library, published by Azure as a port of the Microsoft Azure IoT device SDK for C)." />
+<meta property="og:type" content="article" />
 <meta property="og:url" content="https://s-gregorini003.github.io/post/nano33iotazure/" />
-<meta property="og:type" content="website" />
-<meta property="og:site_name" content="Silvio Gregorini" />
-
-  <meta name="twitter:title" content="Send Large JSON Data to IoT Hub Using MQTT" />
-  <meta name="twitter:description" content="How to Connect Arduino Nano 33 IoT and Azure IoT Hub">
-  <meta name="twitter:image" content="https://s-gregorini003.github.io/img/avatar-icon.png" />
-  <meta name="twitter:card" content="summary" />
-  <link href='https://s-gregorini003.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
-  <meta name="generator" content="Hugo 0.69.2" />
-  <link rel="alternate" href="https://s-gregorini003.github.io/index.xml" type="application/rss+xml" title="Silvio Gregorini"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><link rel="stylesheet" href="https://s-gregorini003.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
-  <link rel="stylesheet" href="https://s-gregorini003.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://s-gregorini003.github.io/css/codeblock.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+<meta property="og:image" content="https://s-gregorini003.github.io/"/>
+<meta property="article:published_time" content="2020-08-24T09:31:28+01:00" />
+<meta property="article:modified_time" content="2020-08-24T09:31:28+01:00" /><meta property="og:site_name" content="s-gregorini003" />
 
 
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-175164530-1', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
 
 
-  </head>
-  <body>
-    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="https://s-gregorini003.github.io/">Silvio Gregorini</a>
+
+
+    <meta property="article:published_time" content="2020-08-24 09:31:28 &#43;0100 BST" />
+
+
+
+
+
+
+
+
+    </head>
+
+    <body class="dark-theme">
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text">$ cd /home/</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
     </div>
+</a>
 
-    <div class="collapse navbar-collapse" id="main-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        
-          
-            <li>
-              <a title="Blog" href="/post/">Blog</a>
-            </li>
-          
-        
-          
-            <li class="navlinks-container">
-              <a class="navlinks-parent">Projects</a>
-              <div class="navlinks-children">
-                
-                  <a href="/post/volca-boy-0">Volca Boy</a>
-                
-              </div>
-            </li>
-          
-        
-          
-            <li>
-              <a title="About" href="/page/about/">About</a>
-            </li>
-          
-        
-
-        
-
-        
-      </ul>
-    </div>
-
-    
-      <div class="avatar-container">
-        <div class="avatar-img-border">
-          <a title="Silvio Gregorini" href="https://s-gregorini003.github.io/">
-            <img class="avatar-img" src="https://s-gregorini003.github.io/img/avatar-icon.png" alt="Silvio Gregorini" />
-          </a>
-        </div>
-      </div>
-    
-
-  </div>
+        <span class="header__right">
+            
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="https://s-gregorini003.github.io/page/about/">about</a></li><li><a href="https://s-gregorini003.github.io/post">blog</a></li>
+    </ul>
 </nav>
 
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+            
 
-
-
-    
-
-
-<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-
-<div class="pswp__bg"></div>
-
-<div class="pswp__scroll-wrap">
-    
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      
-      
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
-</div>
-
-
-  
-  
-  
-
-
-
-
-
-
-  
-
-  <header class="header-section ">
-    
-    <div class="intro-header no-img">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="post-heading">
-              
-                <h1>Send Large JSON Data to IoT Hub Using MQTT</h1>
-              
-              
-              
-                
-                  <h2 class="post-subheading">How to Connect Arduino Nano 33 IoT and Azure IoT Hub</h2>
-                
-              
-              
-                <span class="post-meta">
-  
-  
-  <i class="fas fa-calendar"></i>&nbsp;Posted on 24 August, 2020
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-clock"></i>&nbsp;5&nbsp;minutes
-  
-  
-    &nbsp;|&nbsp;<i class="fas fa-book"></i>&nbsp;1027&nbsp;words
-  
-  
-    
-      &nbsp;|&nbsp;<i class="fas fa-user"></i>&nbsp;Silvio Gregorini
-    
-  
-  
+            <span class="theme-toggle unselectable"><svg class="theme-toggler" width="24" height="24" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M22 41C32.4934 41 41 32.4934 41 22C41 11.5066 32.4934 3 22
+  3C11.5066 3 3 11.5066 3 22C3 32.4934 11.5066 41 22 41ZM7 22C7
+  13.7157 13.7157 7 22 7V37C13.7157 37 7 30.2843 7 22Z"/>
+</svg>
 </span>
+        </span>
+    </span>
+	
+</header>
 
 
-              
-            </div>
-          </div>
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
         </div>
-      </div>
-    </div>
-  </header>
 
+        <article>
+            <h2 class="post-title"><a href="https://s-gregorini003.github.io/post/nano33iotazure/">Send Large JSON Data to IoT Hub Using MQTT</a></h2>
 
-    
-<div class="container" role="main">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-      <article role="main" class="blog-post">
-        <p>This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called  <a href="https://github.com/Azure/azure-iot-arduino">AzureIoTHub</a> and is the IoT Hub&rsquo;s official Arduino library, published by Azure as a port of the <a href="https://github.com/Azure/azure-iot-sdk-c">Microsoft Azure IoT device SDK for C</a>). The problem is that it doesn&rsquo;t actually support any Arduino board. Looking at the <code>README.md</code> file, the hardware currently supported is:</p>
+            
+
+            
+
+            <div class="post-content">
+                <p>This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called  <a href="https://github.com/Azure/azure-iot-arduino">AzureIoTHub</a> and is the IoT Hub&rsquo;s official Arduino library, published by Azure as a port of the <a href="https://github.com/Azure/azure-iot-sdk-c">Microsoft Azure IoT device SDK for C</a>). The problem is that it doesn&rsquo;t actually support any Arduino board. Looking at the <code>README.md</code> file, the hardware currently supported is:</p>
 <ul>
 <li>
 <p>ESP8266 based boards with <a href="https://github.com/esp8266/arduino">esp8266/arduino</a></p>
@@ -327,356 +180,204 @@ if (!doNotTrack) {
 <p>All libraries must be installed on your system before compiling the code (instructions on how to install Arduino libraries can be found <a href="https://www.arduino.cc/en/guide/libraries">here</a>).</p>
 <h2 id="implementation">Implementation</h2>
 <p>Unfortunately, it&rsquo;s not that easy. Turns out that in the first version of my code, I could successfully send short messages over <code>Serial</code> and <code>MQTT</code>. But, when I tried to send a JSON text bigger than 256 Bytes (i.e. longer than 256 characters), it arrived at the Hub truncated.</p>
-
-<link rel="stylesheet" href="https://s-gregorini003.github.io/css/hugo-easy-gallery.css" />
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/nano33iotazure/monitor-events-NOT-WORKING.png" alt="Screenshot of the Azure Cloud Shell when receiving a truncated message."/>
-    </div>
-    <a href="/img/nano33iotazure/monitor-events-NOT-WORKING.png" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Screenshot of the Azure Cloud Shell when receiving a truncated message.</p>
-      </figcaption>
-  </figure>
-</div>
+<figure>
+    <img src="/img/nano33iotazure/monitor-events-NOT-WORKING.png"
+         alt="Screenshot of the Azure Cloud Shell when receiving a truncated message."/> <figcaption>
+            <p>Screenshot of the Azure Cloud Shell when receiving a truncated message.</p>
+        </figcaption>
+</figure>
 
 <p>A similar issue is documented <a href="https://github.com/firedog1024/mkr1000-iotc">here</a>, using a different library for the MQTT client. In that case, the advised solution is to change the value <code>ENTER VALUE TO CHANGE</code> from <code>256</code> to <code>2048</code>, but that implies the following things:</p>
 <ul>
 <li>you&rsquo;d have to edit the library source code, so your program is not reproducible on other systems;</li>
 <li>you still set a fixed value, which, even if bigger, it&rsquo;s not scalable.</li>
 </ul>
+<figure>
+    <img src="/img/nano33iotazure/monitor-events-NOT-WORKING.png"
+         alt="Azure Cloud Shell when the hub is receiving the correct message."/> <figcaption>
+            <p>Azure Cloud Shell when the hub is receiving the correct message.</p>
+        </figcaption>
+</figure>
 
-
-<div class="box" >
-  <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="img">
-      <img itemprop="thumbnail" src="/img/nano33iotazure/monitor-events-NOT-WORKING.png" alt="Azure Cloud Shell when the hub is receiving the correct message."/>
-    </div>
-    <a href="/img/nano33iotazure/monitor-events-NOT-WORKING.png" itemprop="contentUrl"></a>
-      <figcaption>
-          <p>Azure Cloud Shell when the hub is receiving the correct message.</p>
-      </figcaption>
-  </figure>
-</div>
-
-<p>Instead, the solution explained here doesn&rsquo;t require any modification of the libraries&rsquo; source code, since all the changes are made inside the sketch. Concretely, in the <code>publishMessage()</code> function, we declare the char array named <code>payload</code>, which acts as a temporary buffer to store the JSON document. Then, using <code>serializeJson()</code>, the document is serialized to the buffer and the function returns the number of bytes written, which is stored in <code>payloadSize</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">char</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span> <span class="c1">// length of the char buffer that contains the JSON file, concretely the number of characters included in one message
-</span><span class="c1"></span><span class="n">size_t</span> <span class="n">payloadSize</span> <span class="o">=</span> <span class="n">serializeJson</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">payload</span><span class="p">);</span>
+<p>Instead, the solution explained here doesn&rsquo;t require any modification of the libraries' source code, since all the changes are made inside the sketch. Concretely, in the <code>publishMessage()</code> function, we declare the char array named <code>payload</code>, which acts as a temporary buffer to store the JSON document. Then, using <code>serializeJson()</code>, the document is serialized to the buffer and the function returns the number of bytes written, which is stored in <code>payloadSize</code>.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">char</span> payload[<span style="color:#ae81ff">1024</span>]; <span style="color:#75715e">// length of the char buffer that contains the JSON file, concretely the number of characters included in one message
+</span><span style="color:#75715e"></span>size_t payloadSize <span style="color:#f92672">=</span> serializeJson(doc, payload);
 </code></pre></div><p>Now that we have the message and its size, we can send it via MQTT protocol to the IoT Hub. Through the overloaded function <code>beginMessage()</code> we pass the topic and the message size. Then, using the <code>Print</code> class implemented in ArduinoMqttClient, the JSON document is passed directly in the message body. Finally, the <code>endMessage()</code> function publishes the document to the specified topic.</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="c1">// send message, the Print interface can be used to set the message contents
-</span><span class="c1"></span><span class="n">mqttClient</span><span class="p">.</span><span class="n">beginMessage</span><span class="p">(</span><span class="s">&#34;devices/&#34;</span> <span class="o">+</span> <span class="n">deviceId</span> <span class="o">+</span> <span class="s">&#34;/messages/events/&#34;</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">payloadSize</span><span class="p">));</span>
-<span class="n">mqttClient</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span>
-<span class="n">mqttClient</span><span class="p">.</span><span class="n">endMessage</span><span class="p">();</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#75715e">// send message, the Print interface can be used to set the message contents
+</span><span style="color:#75715e"></span>mqttClient.beginMessage(<span style="color:#e6db74">&#34;devices/&#34;</span> <span style="color:#f92672">+</span> deviceId <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/messages/events/&#34;</span>, <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">&gt;</span>(payloadSize));
+mqttClient.print(payload);
+mqttClient.endMessage();
 </code></pre></div><p>The complete function, as found in the example code, is the following:</p>
-<div class="highlight"><pre class="chroma"><code class="language-c++" data-lang="c++"><span class="kt">void</span> <span class="nf">publishMessage</span><span class="p">()</span> <span class="p">{</span>
-  <span class="n">Serial</span><span class="p">.</span><span class="n">println</span><span class="p">(</span><span class="s">&#34;Publishing message&#34;</span><span class="p">);</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c++" data-lang="c++"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">publishMessage</span>() {
+  Serial.println(<span style="color:#e6db74">&#34;Publishing message&#34;</span>);
   
-  <span class="k">const</span> <span class="kt">int</span> <span class="n">capacity</span> <span class="o">=</span> <span class="n">JSON_ARRAY_SIZE</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="o">+</span> <span class="mi">10</span><span class="o">*</span><span class="n">JSON_OBJECT_SIZE</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">+</span> <span class="n">JSON_OBJECT_SIZE</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="mi">280</span><span class="p">;</span>     <span class="c1">// Calculation of the JSON doc size, as explained in the documentation
-</span><span class="c1"></span>
-<span class="cm">/*  
-</span><span class="cm">Here is where you should write the body of your message. In this example, the JSON doc is purposely longer than 256 characters, to highlight the issue.
-</span><span class="cm">*/</span>
+  <span style="color:#66d9ef">const</span> <span style="color:#66d9ef">int</span> capacity <span style="color:#f92672">=</span> JSON_ARRAY_SIZE(<span style="color:#ae81ff">10</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span><span style="color:#f92672">*</span>JSON_OBJECT_SIZE(<span style="color:#ae81ff">2</span>)<span style="color:#f92672">+</span> JSON_OBJECT_SIZE(<span style="color:#ae81ff">3</span>) <span style="color:#f92672">+</span> <span style="color:#ae81ff">280</span>;     <span style="color:#75715e">// Calculation of the JSON doc size, as explained in the documentation
+</span><span style="color:#75715e"></span>
+<span style="color:#75715e">/*  
+</span><span style="color:#75715e">Here is where you should write the body of your message. In this example, the JSON doc is purposely longer than 256 characters, to highlight the issue.
+</span><span style="color:#75715e">*/</span>
 
-  <span class="n">StaticJsonDocument</span><span class="o">&lt;</span><span class="n">capacity</span><span class="o">&gt;</span> <span class="n">doc</span><span class="p">;</span>
-  <span class="n">doc</span><span class="p">[</span><span class="s">&#34;topic&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;messageTopic&#34;</span><span class="p">;</span>  
-  <span class="n">doc</span><span class="p">[</span><span class="s">&#34;deviceId&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="n">deviceId</span><span class="p">;</span>
-  <span class="n">JsonArray</span> <span class="n">data</span> <span class="o">=</span> <span class="n">doc</span><span class="p">.</span><span class="n">createNestedArray</span><span class="p">(</span><span class="s">&#34;data&#34;</span><span class="p">);</span>
-  <span class="n">JsonObject</span> <span class="n">data_0</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_0</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Ankara&#34;</span><span class="p">;</span>
-  <span class="n">data_0</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_1</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_1</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Beirut&#34;</span><span class="p">;</span>
-  <span class="n">data_1</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_2</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_2</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Cincinnati&#34;</span><span class="p">;</span>
-  <span class="n">data_2</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_3</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_3</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Detroit&#34;</span><span class="p">;</span>
-  <span class="n">data_3</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_4</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_4</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Eindhoven&#34;</span><span class="p">;</span>
-  <span class="n">data_4</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_5</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_5</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Fresno&#34;</span><span class="p">;</span>
-  <span class="n">data_5</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_6</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_6</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Genoa&#34;</span><span class="p">;</span>
-  <span class="n">data_6</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_7</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_7</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Huddersfield&#34;</span><span class="p">;</span>
-  <span class="n">data_7</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_8</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_8</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Istanbul&#34;</span><span class="p">;</span>
-  <span class="n">data_8</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-  <span class="n">JsonObject</span> <span class="n">data_9</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="n">createNestedObject</span><span class="p">();</span>
-  <span class="n">data_9</span><span class="p">[</span><span class="s">&#34;label&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#34;Jakarta&#34;</span><span class="p">;</span>
-  <span class="n">data_9</span><span class="p">[</span><span class="s">&#34;state&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  StaticJsonDocument<span style="color:#f92672">&lt;</span>capacity<span style="color:#f92672">&gt;</span> doc;
+  doc[<span style="color:#e6db74">&#34;topic&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;messageTopic&#34;</span>;  
+  doc[<span style="color:#e6db74">&#34;deviceId&#34;</span>] <span style="color:#f92672">=</span> deviceId;
+  JsonArray data <span style="color:#f92672">=</span> doc.createNestedArray(<span style="color:#e6db74">&#34;data&#34;</span>);
+  JsonObject data_0 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_0[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Ankara&#34;</span>;
+  data_0[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> true;
+  JsonObject data_1 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_1[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Beirut&#34;</span>;
+  data_1[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> true;
+  JsonObject data_2 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_2[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Cincinnati&#34;</span>;
+  data_2[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> false;
+  JsonObject data_3 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_3[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Detroit&#34;</span>;
+  data_3[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> false;
+  JsonObject data_4 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_4[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Eindhoven&#34;</span>;
+  data_4[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> true;
+  JsonObject data_5 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_5[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Fresno&#34;</span>;
+  data_5[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> false;
+  JsonObject data_6 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_6[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Genoa&#34;</span>;
+  data_6[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> false;
+  JsonObject data_7 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_7[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Huddersfield&#34;</span>;
+  data_7[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> true;
+  JsonObject data_8 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_8[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Istanbul&#34;</span>;
+  data_8[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> true;
+  JsonObject data_9 <span style="color:#f92672">=</span> data.createNestedObject();
+  data_9[<span style="color:#e6db74">&#34;label&#34;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Jakarta&#34;</span>;
+  data_9[<span style="color:#e6db74">&#34;state&#34;</span>] <span style="color:#f92672">=</span> false;
   
 
-<span class="c1">//   DEBUG - serialize the document in the serial monitor
-</span><span class="c1">//   serializeJson(doc, Serial);
-</span><span class="c1">//   Serial.println(&#34; &#34;);
-</span><span class="c1"></span>  
-  <span class="kt">char</span> <span class="n">payload</span><span class="p">[</span><span class="mi">1024</span><span class="p">];</span> <span class="c1">// length of the char buffer that contains the JSON file, concretely the number of characters included in one message
-</span><span class="c1"></span>  <span class="n">size_t</span> <span class="n">payloadSize</span> <span class="o">=</span> <span class="n">serializeJson</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">payload</span><span class="p">);</span>
+<span style="color:#75715e">//   DEBUG - serialize the document in the serial monitor
+</span><span style="color:#75715e">//   serializeJson(doc, Serial);
+</span><span style="color:#75715e">//   Serial.println(&#34; &#34;);
+</span><span style="color:#75715e"></span>  
+  <span style="color:#66d9ef">char</span> payload[<span style="color:#ae81ff">1024</span>]; <span style="color:#75715e">// length of the char buffer that contains the JSON file, concretely the number of characters included in one message
+</span><span style="color:#75715e"></span>  size_t payloadSize <span style="color:#f92672">=</span> serializeJson(doc, payload);
 
-<span class="c1">//   DEBUG - write the size of the serialized document
-</span><span class="c1">//   Serial.print(&#34;json size:&#34;);
-</span><span class="c1">//   Serial.println(payloadSize);
-</span><span class="c1"></span>  
-<span class="c1">// send message, the Print interface can be used to set the message contents
-</span><span class="c1"></span>  <span class="n">mqttClient</span><span class="p">.</span><span class="n">beginMessage</span><span class="p">(</span><span class="s">&#34;devices/&#34;</span> <span class="o">+</span> <span class="n">deviceId</span> <span class="o">+</span> <span class="s">&#34;/messages/events/&#34;</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">unsigned</span> <span class="kt">long</span><span class="o">&gt;</span><span class="p">(</span><span class="n">payloadSize</span><span class="p">));</span>
-  <span class="n">mqttClient</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">payload</span><span class="p">);</span>
-  <span class="n">mqttClient</span><span class="p">.</span><span class="n">endMessage</span><span class="p">();</span>
-<span class="cm">/*  
-</span><span class="cm">To replicate the issue, uncomment the following 3 lines and comment the 3 above. This way you&#39;ll only be able to send MQTT messages smaller than 256 Bytes.
-</span><span class="cm">*/</span>
-<span class="c1">//  mqttClient.beginMessage(&#34;devices/&#34; + deviceId + &#34;/messages/events/&#34;);
-</span><span class="c1">//  serializeJson(doc, mqttClient);
-</span><span class="c1">//  mqttClient.endMessage();
-</span><span class="c1"></span><span class="p">}</span>
+<span style="color:#75715e">//   DEBUG - write the size of the serialized document
+</span><span style="color:#75715e">//   Serial.print(&#34;json size:&#34;);
+</span><span style="color:#75715e">//   Serial.println(payloadSize);
+</span><span style="color:#75715e"></span>  
+<span style="color:#75715e">// send message, the Print interface can be used to set the message contents
+</span><span style="color:#75715e"></span>  mqttClient.beginMessage(<span style="color:#e6db74">&#34;devices/&#34;</span> <span style="color:#f92672">+</span> deviceId <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;/messages/events/&#34;</span>, <span style="color:#66d9ef">static_cast</span><span style="color:#f92672">&lt;</span><span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">&gt;</span>(payloadSize));
+  mqttClient.print(payload);
+  mqttClient.endMessage();
+<span style="color:#75715e">/*  
+</span><span style="color:#75715e">To replicate the issue, uncomment the following 3 lines and comment the 3 above. This way you&#39;ll only be able to send MQTT messages smaller than 256 Bytes.
+</span><span style="color:#75715e">*/</span>
+<span style="color:#75715e">//  mqttClient.beginMessage(&#34;devices/&#34; + deviceId + &#34;/messages/events/&#34;);
+</span><span style="color:#75715e">//  serializeJson(doc, mqttClient);
+</span><span style="color:#75715e">//  mqttClient.endMessage();
+</span><span style="color:#75715e"></span>}
 </code></pre></div><p>The function above creates a JSON document as follows. Obviously, it can be changed as needed, this is an example to highlight the issue, since the text is longer than 256 characters.</p>
-<div class="highlight"><pre class="chroma"><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&#34;topic&#34;</span><span class="p">:</span> <span class="s2">&#34;messageTopic&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;deviceId&#34;</span><span class="p">:</span> <span class="s2">&#34;deviceId&#34;</span><span class="p">,</span>
-  <span class="nt">&#34;data&#34;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Ankara&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Beirut&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Cincinnati&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Detroit&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Eindhoven&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Fresno&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Genoa&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Huddersfield&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Istanbul&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">true</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-     <span class="nt">&#34;label&#34;</span><span class="p">:</span> <span class="s2">&#34;Jakarta&#34;</span><span class="p">,</span>
-     <span class="nt">&#34;state&#34;</span><span class="p">:</span> <span class="kc">false</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;topic&#34;</span>: <span style="color:#e6db74">&#34;messageTopic&#34;</span>,
+  <span style="color:#f92672">&#34;deviceId&#34;</span>: <span style="color:#e6db74">&#34;deviceId&#34;</span>,
+  <span style="color:#f92672">&#34;data&#34;</span>: [
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Ankara&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">true</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Beirut&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">true</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Cincinnati&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">false</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Detroit&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">false</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Eindhoven&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">true</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Fresno&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">false</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Genoa&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">false</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Huddersfield&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">true</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Istanbul&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">true</span>
+    },
+    {
+     <span style="color:#f92672">&#34;label&#34;</span>: <span style="color:#e6db74">&#34;Jakarta&#34;</span>,
+     <span style="color:#f92672">&#34;state&#34;</span>: <span style="color:#66d9ef">false</span>
+    }
+  ]
+}
 </code></pre></div><hr>
 <p>I hope that this post was helpful. I uploaded an example of the code to send large JSON data from an Arduino Nano 33 IoT to Azure IoT Hub to a <a href="https://github.com/s-gregorini003/azure-iot-arduino-nano-33-iot.git">GitHub repository</a>. Follow the instructions in the <code>README.md</code> to configure it properly. Feel free to use it, modify it and extend it as you like. Thanks for reading!</p>
 
+            </div>
+        </article>
 
-        
+        <hr />
 
-        
-            <hr/>
-            <section id="social-share">
-              <div class="list-inline footer-links">
-                
-
-<div class="share-box" aria-hidden="true">
-    <ul class="share">
-      
-      <li>
-        <a href="//twitter.com/share?url=https%3a%2f%2fs-gregorini003.github.io%2fpost%2fnano33iotazure%2f&amp;text=Send%20Large%20JSON%20Data%20to%20IoT%20Hub%20Using%20MQTT&amp;via=" target="_blank" title="Share on Twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fs-gregorini003.github.io%2fpost%2fnano33iotazure%2f" target="_blank" title="Share on Facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//reddit.com/submit?url=https%3a%2f%2fs-gregorini003.github.io%2fpost%2fnano33iotazure%2f&amp;title=Send%20Large%20JSON%20Data%20to%20IoT%20Hub%20Using%20MQTT" target="_blank" title="Share on Reddit">
-          <i class="fab fa-reddit"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fs-gregorini003.github.io%2fpost%2fnano33iotazure%2f&amp;title=Send%20Large%20JSON%20Data%20to%20IoT%20Hub%20Using%20MQTT" target="_blank" title="Share on LinkedIn">
-          <i class="fab fa-linkedin"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fs-gregorini003.github.io%2fpost%2fnano33iotazure%2f&amp;title=Send%20Large%20JSON%20Data%20to%20IoT%20Hub%20Using%20MQTT" target="_blank" title="Share on StumbleUpon">
-          <i class="fab fa-stumbleupon"></i>
-        </a>
-      </li>
-  
-      
-      <li>
-        <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fs-gregorini003.github.io%2fpost%2fnano33iotazure%2f&amp;description=Send%20Large%20JSON%20Data%20to%20IoT%20Hub%20Using%20MQTT" target="_blank" title="Share on Pinterest">
-          <i class="fab fa-pinterest"></i>
-        </a>
-      </li>
-    </ul>
-  </div>
-  
-
-              </div>
-            </section>
-        
-
-        
-          
-
-          
-        
-      </article>
-
-      
-        <ul class="pager blog-pager">
-          
-            <li class="previous">
-              <a href="https://s-gregorini003.github.io/post/ac/" data-toggle="tooltip" data-placement="top" title="Noise and Vibration Analysis of 3D Printers">&larr; Previous Post</a>
-            </li>
-          
-          
-        </ul>
-      
-
-
-      
-        
-        
-      
-
-    </div>
-  </div>
-</div>
-
-      
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <ul class="list-inline text-center footer-links">
-          
-              <li>
-                <a href="mailto:silvio.gregorini@gmail.com" title="Email me">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/s-gregorini003" title="GitHub">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://linkedin.com/in/silvio-gregorini-097364174" title="LinkedIn">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://open.spotify.com/user/11133672971" title="Spotify">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-spotify fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li>
-                <a href="https://telegram.me/cambionickquandovoglio" title="Telegram">
-                  <span class="fa-stack fa-lg">
-                    <i class="fas fa-circle fa-stack-2x"></i>
-                    <i class="fab fa-telegram fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-          
-          <li>
-            <a href="" title="RSS">
-              <span class="fa-stack fa-lg">
-                <i class="fas fa-circle fa-stack-2x"></i>
-                <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
-              </span>
-            </a>
-          </li>
-          
-        </ul>
-        <p class="credits copyright text-muted">
-          
+        <div class="post-info">
             
-              <a href="s-gregorini003.github.io">Silvio Gregorini</a>
             
-          
+  		</div>
+    </main>
 
-          &nbsp;&bull;&nbsp;&copy;
-          
-            2020
-          
+            </div>
 
-          
-            &nbsp;&bull;&nbsp;
-            <a href="https://s-gregorini003.github.io/">Silvio Gregorini</a>
-          
-        </p>
-        
-        <p class="credits theme-by text-muted">
-          <a href="https://gohugo.io">Hugo v0.69.2</a> powered &nbsp;&bull;&nbsp; Theme <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a> adapted from <a href="https://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a>
-          
-        </p>
-      </div>
+            
+                <footer class="footer">
+    <div class="footer__inner">
+        <div class="footer__content">
+            <span>&copy; 2020</span>
+            
+                <span><a href="https://s-gregorini003.github.io/">Silvio Gregorini</a></span>
+            
+            
+  
+        </div>
     </div>
-  </div>
-</footer><script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"></script>
-<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+ 
+</footer>
 
-<script src="https://s-gregorini003.github.io/js/main.js"></script>
-<script src="https://s-gregorini003.github.io/js/highlight.min.js"></script>
-<script> hljs.initHighlightingOnLoad(); </script>
-<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script><script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script><script src="https://s-gregorini003.github.io/js/load-photoswipe.js"></script>
+            
+        </div>
+
+        
 
 
 
 
-
-
-
-
-
+<script type="text/javascript" src="/bundle.min.dc716e9092c9820b77f96da294d0120aeeb189b5bcea9752309ebea27fd53bbe6b13cffb2aca8ecf32525647ceb7001f76091de4199ac5a3caa432c070247f5b.js" integrity="sha512-3HFukJLJggt3&#43;W2ilNASCu6xibW86pdSMJ6&#43;on/VO75rE8/7KsqOzzJSVkfOtwAfdgkd5BmaxaPKpDLAcCR/Ww=="></script>
     
-  </body>
-</html>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-175164530-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
 
+
+
+
+    </body>
+</html>
