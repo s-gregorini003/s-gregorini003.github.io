@@ -1,62 +1,90 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
-    <loc>https://s-gregorini003.github.io/post/</loc>
+    <loc>/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/talk/example-talk/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/event/</loc>
+    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/academic/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/categories/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/category/demo/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/getting-started/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/%E5%BC%80%E6%BA%90/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/category/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/nano33iotazure/</loc>
     <lastmod>2020-08-24T09:31:28+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/</loc>
-    <lastmod>2020-08-24T09:31:28+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/post/nano33iotazure/</loc>
-    <lastmod>2020-08-24T09:31:28+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/post/ac/</loc>
+  </url><url>
+    <loc>/post/ac/</loc>
     <lastmod>2020-06-18T08:45:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/post/aae/</loc>
+  </url><url>
+    <loc>/post/aae/</loc>
     <lastmod>2020-06-10T08:45:42+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/post/volca-boy-1/</loc>
+  </url><url>
+    <loc>/post/volca-boy-1/</loc>
     <lastmod>2020-05-31T18:01:50+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/post/volca-boy-0/</loc>
+  </url><url>
+    <loc>/post/volca-boy-0/</loc>
     <lastmod>2020-05-03T16:13:46+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/page/about/</loc>
+  </url><url>
+    <loc>/page/about/</loc>
     <lastmod>2020-05-01T13:03:37+01:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/page/</loc>
+  </url><url>
+    <loc>/page/</loc>
     <lastmod>2020-05-01T13:03:37+01:00</lastmod>
+  </url><url>
+    <loc>/slides/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/slides/example/</loc>
+    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tag/deep-learning/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/example/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/project/</loc>
+    <lastmod>2016-04-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication-type/1/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/example/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication_types/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/publication/</loc>
+    <lastmod>2013-07-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/admin/</loc>
+  </url><url>
+    <loc>/series/</loc>
   </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/blog/</loc>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/series/</loc>
-  </url>
-  
-  <url>
-    <loc>https://s-gregorini003.github.io/tags/</loc>
-  </url>
-  
 </urlset>
