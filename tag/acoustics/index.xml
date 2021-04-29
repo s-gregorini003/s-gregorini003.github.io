@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Acoustics | Silvio Gregorini</title>
+    <link>https://s-gregorini003.github.io/tag/acoustics/</link>
+      <atom:link href="https://s-gregorini003.github.io/tag/acoustics/index.xml" rel="self" type="application/rss+xml" />
+    <description>Acoustics</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Silvio Gregorini © 2021 </copyright><lastBuildDate>Thu, 18 Jun 2020 08:45:42 +0000</lastBuildDate>
+    <image>
+      <url>https://s-gregorini003.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Acoustics</title>
+      <link>https://s-gregorini003.github.io/tag/acoustics/</link>
+    </image>
+    
+    <item>
+      <title>Noise and Vibration Analysis of 3D Printers</title>
+      <link>https://s-gregorini003.github.io/project/noise-3d-printer/</link>
+      <pubDate>Thu, 18 Jun 2020 08:45:42 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/project/noise-3d-printer/</guid>
+      <description>&lt;p&gt;This post is on a project made at the beginning 2020 in which I had to analyse and mitigate the noise emitted by a desktop 3D printer. Here I cover the methodology used to conduct the measurements, which differs a bit from the standards, given the limited equipment available.&lt;/p&gt;
+&lt;h3 id=&#34;tldr&#34;&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor, without the option to collect either octave band or one-third-octave band measurements. After 336 individual measures (144 with the vibration sensor + 144 with a contact microphone + 48 with NTi Audio sound level meters) carried on during a stressful 72 hours period, the results showed that the changes applied to the machine improved its noise emission. However, part of the instrumentation used (the CM-01B contact microphone) proved unsuitable for conducting the measuring process.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Test routines&lt;/strong&gt; - I coded four G-Code procedures for tests reproducibility, numbered to match the name conventions on the collected data. Obviously, routine 1 and 2 do not require any G-Code file, since the 3D printer is not moving.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Background noise;&lt;/li&gt;
+&lt;li&gt;Source idling;&lt;/li&gt;
+&lt;li&gt;Source with simulated load, under normal working conditions (&lt;code&gt;test-routine-a.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Source at maximum operating speed (&lt;code&gt;test-routine-c-full-speed.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Source working under conditions corresponding to maximum sound generation
+representative of normal use (&lt;code&gt;specimen-d-infill-only.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Source undergoing a charateristic work cycle (&lt;code&gt;specimen.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Structure-borne sound&lt;/strong&gt; - As I said previously, this set of tests couldn&amp;rsquo;t be conducted according to the standard &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail/?pid=000000000000942052&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS ISO 9611:1996&lt;/a&gt;, but I tried to follow the procedure as far as possible. I collected 3-axis measurements on each of the 4 predefined supports and for each routine, using both the contact microphone CM-01B and the vibration meter Bruel &amp;amp; Kjaer 2537: the former returned Z-weighted sound pressure level in one-thirdoctave bands (from 20 Hz to 20 kHz), while the latter a single acceleration value. Both were time-averaged over each routine duration.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-setup-to-measure-structure-borne-sound-on-the-z-axis&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/struc-support-4-z-axis.jpg&#34; alt=&#34;Setup to measure structure-borne sound on the z-axis.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Setup to measure structure-borne sound on the z-axis.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;Airborne sound&lt;/strong&gt; - On the other hand, I could perform this tests according to &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail?pid=000000000030276993&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 1680:2013&lt;/a&gt; and &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail/?pid=000000000030094857&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 3746:2010&lt;/a&gt;. For this test, I conducted 6 measurements at each of the 4 microphone positions outlined by the standards, before and after the changes. The collected data were A-weighted sound pressure levels in one-third-octave-bands (from 20 Hz to 20 kHz), time-averaged over the routine average duration.&lt;/p&gt;
+&lt;h2 id=&#34;machine-survey-and-improvements&#34;&gt;Machine Survey and Improvements&lt;/h2&gt;
+&lt;p&gt;After the first analysis and measurement session, the printer showed the following weaknesses in terms of noise emission:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Fans - Even without a systematic measurement, it is clear that the majority of the noise in a 3D printer comes from its fans. In particular, this machine has 4 fans in total, positioned in the following spots: motherboard, extruder, x-axis motor and power supply. The latter was the most problematic, since that fan was always running at full speed. This was caused by the power supply circuit, which has the space dedicated to a mechanical thermostat, but the component was removed and the poles jumped. So, I installed a normally open KSD9700 thermostat in the location and placed inside the large coil. The switch on the thermostat is designed to close if the temperature exceeds 45 degrees Celsius, which is a default conguration for this type of power supply.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-position-of-the-switching-thermostat-installed-in-the-power-supply&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/power-supply-thermo.jpg&#34; alt=&#34;Position of the switching thermostat installed in the power supply.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Position of the switching thermostat installed in the power supply.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Motor dampers - The printer under test uses 5 Nema17 stepper motors, which is one of the most common and cheap solutions in the field. Despite their cost, popularity, and performance, these motors are particularly loud, especially when coupled with low resolution controllers
+like the DRV8825 IC. To address this potential issue, I decided to install mechanical dampers between the motor and the 3D printer frame.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-installation-of-the-motor-dampers&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/motors.png&#34; alt=&#34;Installation of the motor dampers.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Installation of the motor dampers.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Bearings - Another potential source of noise and vibration was found in the linear bearings of the y-axis. These three bearings allow the heated bed to move without friction along the cylindrical rails. In the original design of the printer, they were spherical bearings, which require lower tolerances to work, but are prone to lose performance over time. They have been substituted by self-lubricating polymer bearing, which have no moving parts, and therefore are quieter, more precise and durable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;All considered, this project is satisfactory: the data show improvements in most of the tested modes. After processing the raw data according to the relative standards, I plotted the before/after comparisons. Moreover, I&amp;rsquo;ve found out that a CM-01B contact microphone can&amp;rsquo;t be used to collect reliable vibration data!&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-comparison-between-the-data-collected-with-the-cm-01b-for-the-y-axis&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/contact-mic-results.png&#34; alt=&#34;Comparison between the data collected with the CM-01B for the y-axis.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Comparison between the data collected with the CM-01B for the y-axis.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;Apart from this finding, the other procedures show significant improvements on the noise emitted by the 3D printer. As you can se by the following graph, I was able to isolate and reduce specific frequencies in the machine (in this example, the peak at around 1000 Hz corresponds to cooling fan of the power supply).&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-airborne-sound-power-level-for-test-routine-a&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/plot-3-test-routine-a.png&#34; alt=&#34;Airborne sound power level for test routine a.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Airborne sound power level for test routine a.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;Thanks for reading! In case you want to take a deeper look at this project and at the results, you can find it &lt;a href=&#34;https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer#fullTextFileContent&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>3D Printed Acoustic Absorbers</title>
+      <link>https://s-gregorini003.github.io/project/3d-printed-absorbers/</link>
+      <pubDate>Wed, 10 Jun 2020 08:45:42 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/project/3d-printed-absorbers/</guid>
+      <description>&lt;p&gt;This blog post is to summarise a research project conducted at the beginning of 2019 as part of the Advanced Audio Engineering module (MSc Audio Engineering, Leeds Beckett University). The project discusses the potential of achieving high performance in terms of sound absorption through additive manufacturing techniques.&lt;/p&gt;
+&lt;p&gt;The absorbers are designed to exploit the principle of passive destructive interference (PDI) and manufactured using a commercially available fused deposition modeling (FDM) 3D printer. The specimen are cylindrical and produced with cavities of different lengths. The absorption coefficient is evaluated using an impedance tube and following the specifications of the standard &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail?pid=000000000030069842&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 10534-2:2001&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The results show that significant sound absorption can be achieved, although some absorption peaks do not match the expected frequencies. This may be caused by turbulence and resonance phenomena, especially in samples with greater diameter of the cavity. Futher investigation is required, but the potential of these technologies in terms of efficiency over manufacturing cost and absorber size is undoubted.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The aim of the project is to design and manufacture Passive Destructive Interference (PDI) absorbers using Additive Manufacturing (AM) techniques and then to evaluate their performance through a low cost, self-built impedance tube. The main outcome of the measurement process is a set of diagrams of the normal absorption factor of the specimens as a function of frequency in a mid-low spectrum range. The sound absorption curves will be then analyzed to determine the effects of the tested geometries and to verify if the experimental results agree with the values expected from the samples in the design phase.&lt;/p&gt;
+&lt;h2 id=&#34;theory-and-methodology&#34;&gt;Theory and Methodology&lt;/h2&gt;
+&lt;p&gt;The investigated devices are designed to absorb specific frequencies through passive destructive interference. These frequencies depend mainly on the specimen&amp;rsquo;s geometry, and can be calculated in advance through the following equation&lt;/p&gt;
+&lt;p&gt;$$f_n = \frac{(2n - 1)* c}{2L}$$&lt;/p&gt;
+&lt;p&gt;where &lt;em&gt;L&lt;/em&gt; (m) is the length of the cavity and &lt;em&gt;c&lt;/em&gt; (m/s) is the speed of sound in the air.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-specification-and-design-of-a-specimen&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/sample-A-specs.png&#34; alt=&#34;Specification and design of a specimen.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Specification and design of a specimen.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;I designed the samples in SolidWorks and manufactured with an AthorBot Brother Desktop 3D Printer. To test different materials, both geometries were printed in ABS and PETG.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-two-specimen-used-for-measurement&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/specimen1.jpg&#34; alt=&#34;Two specimen used for measurement.&#34; loading=&#34;lazy&#34; data-zoomable width=&#34;600px&#34; /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Two specimen used for measurement.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;The measurement of the absorption coefficient was conducted according to the &lt;em&gt;two-micophone technique&lt;/em&gt; detailed in &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail?pid=000000000030069842&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 10534-2:2001&lt;/a&gt;. The biggest issue faced in this project was to find an impedance tube to conduct the evaluation. Since my university had part of the equipment (microphones, soundcard, speakers&amp;hellip;), in the end I decided to build a low-cost impedance tube. I built it out of pvc pipes, hydraulic seals, and I added an Arduino Uno with an OLED display and temperature/humidity sensors to keep track of the environmental conditions. To calibrate the tube and conduct the measuring process - which consisted in measuring the cross-transfer function and then calculating the absorption coefficient - I used the software &lt;a href=&#34;https://www.holmarc.com/softwares/impedance_tube_software.rar&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Holmarc Wave Analyzer 4C &lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-measurement-test-equipment-layout&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/TestEquipmentDiagram.png&#34; alt=&#34;Measurement test equipment layout.&#34; loading=&#34;lazy&#34; data-zoomable width=&#34;800px&#34; /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Measurement test equipment layout.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;findings&#34;&gt;Findings&lt;/h2&gt;
+&lt;p&gt;For each specimen, measurements are taken in the frequency interval 100-3200 Hz. The normal sound absorption curves are analysed through the evaluation of two values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The frequency of peak sound absorption&lt;/li&gt;
+&lt;li&gt;The frequency range between the values on both sides of the peak where half the peak sound absorption occurs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using those values, the effects of the tested geometries can be determined and compared to the expected theoretical values. The results show that significant sound absorption has been achieved. The sound absorption coefficient reaches values of 0.87 at peak frequencies in the range considered. However, it must be noted that the absorption bandwidth is relatively narrow and that many relatively lower peaks can be attributed to the unprofessional measuring equipment.&lt;/p&gt;
+&lt;p&gt;For example, the following figure shows that the predicted frequency of the peaks for sample A is respected mainly in the lower range, while they are slightly shifted in the mid-upper range considered, probably due to production defects in the specimen.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-measured-absorption-coefficient-for-sample-a-compared-to-predicted-peak-frequencies&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/sample-A-results.png&#34; alt=&#34;Measured absorption coefficient for sample A compared to predicted peak frequencies.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Measured absorption coefficient for sample A compared to predicted peak frequencies.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;Thanks for reading! If you want to have a look at the full article, you can find it &lt;a href=&#34;https://www.researchgate.net/publication/343628647_Measurement_of_the_Absorption_Coefficient_for_Destructive_Interference_Absorbers_Produced_by_Additive_Manufacturing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.researchgate.net/publication/281005456_Sound_absorption_and_additive_manufacturing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sound absorption and additive manufacturing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.emerald.com/insight/content/doi/10.1108/13552540710824805/full/html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implications of solid freeform fabrication on acoustic absorbers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

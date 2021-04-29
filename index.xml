@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Silvio Gregorini</title>
-    <link>/</link>
-      <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <link>https://s-gregorini003.github.io/</link>
+      <atom:link href="https://s-gregorini003.github.io/index.xml" rel="self" type="application/rss+xml" />
     <description>Silvio Gregorini</description>
-    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>Silvio Gregorini © 2021 </copyright><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>https://s-gregorini003.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Silvio Gregorini</title>
-      <link>/</link>
+      <link>https://s-gregorini003.github.io/</link>
     </image>
     
     <item>
       <title>Example Talk</title>
-      <link>/talk/example-talk/</link>
+      <link>https://s-gregorini003.github.io/talk/example-talk/</link>
       <pubDate>Sat, 01 Jun 2030 13:00:00 +0000</pubDate>
-      <guid>/talk/example-talk/</guid>
+      <guid>https://s-gregorini003.github.io/talk/example-talk/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
@@ -33,16 +33,53 @@
     </item>
     
     <item>
-      <title>Welcome to Wowchemy, the website builder for Hugo</title>
-      <link>/post/getting-started/</link>
-      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/post/getting-started/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
-&lt;li&gt;The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;
-&lt;/ol&gt;
+      <title>Send Large JSON Data to IoT Hub Using MQTT</title>
+      <link>https://s-gregorini003.github.io/post/large-json-data/</link>
+      <pubDate>Mon, 24 Aug 2020 09:31:28 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/post/large-json-data/</guid>
+      <description>&lt;p&gt;This article is to demonstrate how to program an Arduino Nano 33 IoT board to communicate with Microsoft Azure. With a quick Google search, you would find out that there&amp;rsquo;s already a library with all the functions required to share messages between Azure and Arduino boards. It is called  &lt;a href=&#34;https://github.com/Azure/azure-iot-arduino&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AzureIoTHub&lt;/a&gt; and is the IoT Hub&amp;rsquo;s official Arduino library, published by Azure as a port of the &lt;a href=&#34;https://github.com/Azure/azure-iot-sdk-c&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Microsoft Azure IoT device SDK for C&lt;/a&gt;). The problem is that it doesn&amp;rsquo;t actually support any Arduino board. Looking at the &lt;code&gt;README.md&lt;/code&gt; file, the hardware currently supported is:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;ESP8266 based boards with &lt;a href=&#34;https://github.com/esp8266/arduino&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;esp8266/arduino&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;SparkFun &lt;a href=&#34;https://www.sparkfun.com/products/13711&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Thing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Adafruit &lt;a href=&#34;https://www.adafruit.com/products/2821&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Feather Huzzah&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ESP32 based boards with &lt;a href=&#34;https://github.com/espressif/arduino-esp32&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;espressif/arduino-esp32&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Adafruit &lt;a href=&#34;https://www.adafruit.com/product/3405&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;HUZZAH32&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;So, until the next compatibility update, the only way to send telemetry from a Nano 33 IoT to Azure IoT Hub is through third-party libraries.&lt;/p&gt;
+&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
+&lt;p&gt;To code my workaround, I used the following libraries:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://arduinojson.org&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ArduinoJson&lt;/a&gt; - To encapsulate my data in a JSON message, one of the formats accepted by IoT Hub;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/arduino-libraries/WiFiNINA&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;WiFiNINA&lt;/a&gt; - To connect the board to the WiFi;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/arduino-libraries/ArduinoMqttClient&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ArduinoMqttClient&lt;/a&gt; - Client that allows to send and receive MQTT messages;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/arduino-libraries/ArduinoBearSSL&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ArduinoBearSSL&lt;/a&gt; - Port of &lt;a href=&#34;https://bearssl.org/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BearSSL&lt;/a&gt; to Arduino, to implement the SSL/TLS protocol;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/arduino-libraries/ArduinoECCX08&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;ArduinoECCX08&lt;/a&gt; - Library for the Atmel/Microchip ECC508 and ECC608 crypto chips, used for authentication with IoT Hub with a SelfSigned X.509 certificate;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;All libraries must be installed on your system before compiling the code (instructions on how to install Arduino libraries can be found &lt;a href=&#34;https://www.arduino.cc/en/guide/libraries&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;h2 id=&#34;implementation&#34;&gt;Implementation&lt;/h2&gt;
+&lt;p&gt;Unfortunately, it&amp;rsquo;s not that easy. Turns out that in the first version of my code, I could successfully send short messages over &lt;code&gt;Serial&lt;/code&gt; and &lt;code&gt;MQTT&lt;/code&gt;. But, when I tried to send a JSON text bigger than 256 Bytes (i.e. longer than 256 characters), it arrived at the Hub truncated.&lt;/p&gt;
 
 
 
@@ -57,63 +94,534 @@
 
 
 
-&lt;figure  id=&#34;figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device&#34;&gt;
+&lt;figure  id=&#34;figure-screenshot-of-the-azure-cloud-shell-when-receiving-a-truncated-message&#34;&gt;
   &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
-    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png&#34; alt=&#34;The template is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/post/large-json-data/monitor-events-NOT-WORKING.png&#34; alt=&#34;Screenshot of the Azure Cloud Shell when receiving a truncated message.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
   &lt;/div&gt;&lt;figcaption&gt;
-      The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
+      Screenshot of the Azure Cloud Shell when receiving a truncated message.
     &lt;/figcaption&gt;&lt;/figure&gt;
-&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+&lt;p&gt;A similar issue is documented &lt;a href=&#34;https://github.com/firedog1024/mkr1000-iotc&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;, using a different library for the MQTT client. In that case, the advised solution is to change the value &lt;code&gt;ENTER VALUE TO CHANGE&lt;/code&gt; from &lt;code&gt;256&lt;/code&gt; to &lt;code&gt;2048&lt;/code&gt;, but that implies the following things:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/guide/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;you&amp;rsquo;d have to edit the library source code, so your program is not reproducible on other systems;&lt;/li&gt;
+&lt;li&gt;you still set a fixed value, which, even if bigger, it&amp;rsquo;s not scalable.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;crowd-funded-open-source-software&#34;&gt;Crowd-funded open-source software&lt;/h2&gt;
-&lt;p&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;
-&lt;h3 id=&#34;-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans&#34;&gt;&lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a&gt;&lt;/h3&gt;
-&lt;p&gt;As a token of appreciation for sponsoring, you can &lt;strong&gt;unlock &lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these&lt;/a&gt; awesome rewards and extra features 🦄✨&lt;/strong&gt;&lt;/p&gt;
-&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-azure-cloud-shell-when-the-hub-is-receiving-the-correct-message&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/post/large-json-data/monitor-events-NOT-WORKING.png&#34; alt=&#34;Azure Cloud Shell when the hub is receiving the correct message.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Azure Cloud Shell when the hub is receiving the correct message.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;Instead, the solution explained here doesn&amp;rsquo;t require any modification of the libraries&#39; source code, since all the changes are made inside the sketch. Concretely, in the &lt;code&gt;publishMessage()&lt;/code&gt; function, we declare the char array named &lt;code&gt;payload&lt;/code&gt;, which acts as a temporary buffer to store the JSON document. Then, using &lt;code&gt;serializeJson()&lt;/code&gt;, the document is serialized to the buffer and the function returns the number of bytes written, which is stored in &lt;code&gt;payloadSize&lt;/code&gt;.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;char payload[1024]; // length of the char buffer that contains the JSON file, concretely the number of characters included in one message
+size_t payloadSize = serializeJson(doc, payload);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Now that we have the message and its size, we can send it via MQTT protocol to the IoT Hub. Through the overloaded function &lt;code&gt;beginMessage()&lt;/code&gt; we pass the topic and the message size. Then, using the &lt;code&gt;Print&lt;/code&gt; class implemented in ArduinoMqttClient, the JSON document is passed directly in the message body. Finally, the &lt;code&gt;endMessage()&lt;/code&gt; function publishes the document to the specified topic.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;// send message, the Print interface can be used to set the message contents
+mqttClient.beginMessage(&amp;quot;devices/&amp;quot; + deviceId + &amp;quot;/messages/events/&amp;quot;, static_cast&amp;lt;unsigned long&amp;gt;(payloadSize));
+mqttClient.print(payload);
+mqttClient.endMessage();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The complete function, as found in the example code, is the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void publishMessage() {
+  Serial.println(&amp;quot;Publishing message&amp;quot;);
+  
+  const int capacity = JSON_ARRAY_SIZE(10) + 10*JSON_OBJECT_SIZE(2)+ JSON_OBJECT_SIZE(3) + 280;     // Calculation of the JSON doc size, as explained in the documentation
+
+/*  
+Here is where you should write the body of your message. In this example, the JSON doc is purposely longer than 256 characters, to highlight the issue.
+*/
+
+  StaticJsonDocument&amp;lt;capacity&amp;gt; doc;
+  doc[&amp;quot;topic&amp;quot;] = &amp;quot;messageTopic&amp;quot;;  
+  doc[&amp;quot;deviceId&amp;quot;] = deviceId;
+  JsonArray data = doc.createNestedArray(&amp;quot;data&amp;quot;);
+  JsonObject data_0 = data.createNestedObject();
+  data_0[&amp;quot;label&amp;quot;] = &amp;quot;Ankara&amp;quot;;
+  data_0[&amp;quot;state&amp;quot;] = true;
+  JsonObject data_1 = data.createNestedObject();
+  data_1[&amp;quot;label&amp;quot;] = &amp;quot;Beirut&amp;quot;;
+  data_1[&amp;quot;state&amp;quot;] = true;
+  JsonObject data_2 = data.createNestedObject();
+  data_2[&amp;quot;label&amp;quot;] = &amp;quot;Cincinnati&amp;quot;;
+  data_2[&amp;quot;state&amp;quot;] = false;
+  JsonObject data_3 = data.createNestedObject();
+  data_3[&amp;quot;label&amp;quot;] = &amp;quot;Detroit&amp;quot;;
+  data_3[&amp;quot;state&amp;quot;] = false;
+  JsonObject data_4 = data.createNestedObject();
+  data_4[&amp;quot;label&amp;quot;] = &amp;quot;Eindhoven&amp;quot;;
+  data_4[&amp;quot;state&amp;quot;] = true;
+  JsonObject data_5 = data.createNestedObject();
+  data_5[&amp;quot;label&amp;quot;] = &amp;quot;Fresno&amp;quot;;
+  data_5[&amp;quot;state&amp;quot;] = false;
+  JsonObject data_6 = data.createNestedObject();
+  data_6[&amp;quot;label&amp;quot;] = &amp;quot;Genoa&amp;quot;;
+  data_6[&amp;quot;state&amp;quot;] = false;
+  JsonObject data_7 = data.createNestedObject();
+  data_7[&amp;quot;label&amp;quot;] = &amp;quot;Huddersfield&amp;quot;;
+  data_7[&amp;quot;state&amp;quot;] = true;
+  JsonObject data_8 = data.createNestedObject();
+  data_8[&amp;quot;label&amp;quot;] = &amp;quot;Istanbul&amp;quot;;
+  data_8[&amp;quot;state&amp;quot;] = true;
+  JsonObject data_9 = data.createNestedObject();
+  data_9[&amp;quot;label&amp;quot;] = &amp;quot;Jakarta&amp;quot;;
+  data_9[&amp;quot;state&amp;quot;] = false;
+  
+
+//   DEBUG - serialize the document in the serial monitor
+//   serializeJson(doc, Serial);
+//   Serial.println(&amp;quot; &amp;quot;);
+  
+  char payload[1024]; // length of the char buffer that contains the JSON file, concretely the number of characters included in one message
+  size_t payloadSize = serializeJson(doc, payload);
+
+//   DEBUG - write the size of the serialized document
+//   Serial.print(&amp;quot;json size:&amp;quot;);
+//   Serial.println(payloadSize);
+  
+// send message, the Print interface can be used to set the message contents
+  mqttClient.beginMessage(&amp;quot;devices/&amp;quot; + deviceId + &amp;quot;/messages/events/&amp;quot;, static_cast&amp;lt;unsigned long&amp;gt;(payloadSize));
+  mqttClient.print(payload);
+  mqttClient.endMessage();
+/*  
+To replicate the issue, uncomment the following 3 lines and comment the 3 above. This way you&#39;ll only be able to send MQTT messages smaller than 256 Bytes.
+*/
+//  mqttClient.beginMessage(&amp;quot;devices/&amp;quot; + deviceId + &amp;quot;/messages/events/&amp;quot;);
+//  serializeJson(doc, mqttClient);
+//  mqttClient.endMessage();
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The function above creates a JSON document as follows. Obviously, it can be changed as needed, this is an example to highlight the issue, since the text is longer than 256 characters.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-json&#34;&gt;{
+  &amp;quot;topic&amp;quot;: &amp;quot;messageTopic&amp;quot;,
+  &amp;quot;deviceId&amp;quot;: &amp;quot;deviceId&amp;quot;,
+  &amp;quot;data&amp;quot;: [
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Ankara&amp;quot;,
+     &amp;quot;state&amp;quot;: true
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Beirut&amp;quot;,
+     &amp;quot;state&amp;quot;: true
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Cincinnati&amp;quot;,
+     &amp;quot;state&amp;quot;: false
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Detroit&amp;quot;,
+     &amp;quot;state&amp;quot;: false
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Eindhoven&amp;quot;,
+     &amp;quot;state&amp;quot;: true
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Fresno&amp;quot;,
+     &amp;quot;state&amp;quot;: false
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Genoa&amp;quot;,
+     &amp;quot;state&amp;quot;: false
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Huddersfield&amp;quot;,
+     &amp;quot;state&amp;quot;: true
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Istanbul&amp;quot;,
+     &amp;quot;state&amp;quot;: true
+    },
+    {
+     &amp;quot;label&amp;quot;: &amp;quot;Jakarta&amp;quot;,
+     &amp;quot;state&amp;quot;: false
+    }
+  ]
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;p&gt;I hope that this post was helpful. I uploaded an example of the code to send large JSON data from an Arduino Nano 33 IoT to Azure IoT Hub to a &lt;a href=&#34;https://github.com/s-gregorini003/azure-iot-arduino-nano-33-iot.git&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;GitHub repository&lt;/a&gt;. Follow the instructions in the &lt;code&gt;README.md&lt;/code&gt; to configure it properly. Feel free to use it, modify it and extend it as you like. Thanks for reading!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Noise and Vibration Analysis of 3D Printers</title>
+      <link>https://s-gregorini003.github.io/project/noise-3d-printer/</link>
+      <pubDate>Thu, 18 Jun 2020 08:45:42 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/project/noise-3d-printer/</guid>
+      <description>&lt;p&gt;This post is on a project made at the beginning 2020 in which I had to analyse and mitigate the noise emitted by a desktop 3D printer. Here I cover the methodology used to conduct the measurements, which differs a bit from the standards, given the limited equipment available.&lt;/p&gt;
+&lt;h3 id=&#34;tldr&#34;&gt;TL;DR&lt;/h3&gt;
+&lt;p&gt;To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor, without the option to collect either octave band or one-third-octave band measurements. After 336 individual measures (144 with the vibration sensor + 144 with a contact microphone + 48 with NTi Audio sound level meters) carried on during a stressful 72 hours period, the results showed that the changes applied to the machine improved its noise emission. However, part of the instrumentation used (the CM-01B contact microphone) proved unsuitable for conducting the measuring process.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;methodology&#34;&gt;Methodology&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Test routines&lt;/strong&gt; - I coded four G-Code procedures for tests reproducibility, numbered to match the name conventions on the collected data. Obviously, routine 1 and 2 do not require any G-Code file, since the 3D printer is not moving.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Background noise;&lt;/li&gt;
+&lt;li&gt;Source idling;&lt;/li&gt;
+&lt;li&gt;Source with simulated load, under normal working conditions (&lt;code&gt;test-routine-a.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Source at maximum operating speed (&lt;code&gt;test-routine-c-full-speed.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Source working under conditions corresponding to maximum sound generation
+representative of normal use (&lt;code&gt;specimen-d-infill-only.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;li&gt;Source undergoing a charateristic work cycle (&lt;code&gt;specimen.gcode&lt;/code&gt;);&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;Structure-borne sound&lt;/strong&gt; - As I said previously, this set of tests couldn&amp;rsquo;t be conducted according to the standard &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail/?pid=000000000000942052&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS ISO 9611:1996&lt;/a&gt;, but I tried to follow the procedure as far as possible. I collected 3-axis measurements on each of the 4 predefined supports and for each routine, using both the contact microphone CM-01B and the vibration meter Bruel &amp;amp; Kjaer 2537: the former returned Z-weighted sound pressure level in one-thirdoctave bands (from 20 Hz to 20 kHz), while the latter a single acceleration value. Both were time-averaged over each routine duration.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-setup-to-measure-structure-borne-sound-on-the-z-axis&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/struc-support-4-z-axis.jpg&#34; alt=&#34;Setup to measure structure-borne sound on the z-axis.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Setup to measure structure-borne sound on the z-axis.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;&lt;strong&gt;Airborne sound&lt;/strong&gt; - On the other hand, I could perform this tests according to &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail?pid=000000000030276993&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 1680:2013&lt;/a&gt; and &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail/?pid=000000000030094857&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 3746:2010&lt;/a&gt;. For this test, I conducted 6 measurements at each of the 4 microphone positions outlined by the standards, before and after the changes. The collected data were A-weighted sound pressure levels in one-third-octave-bands (from 20 Hz to 20 kHz), time-averaged over the routine average duration.&lt;/p&gt;
+&lt;h2 id=&#34;machine-survey-and-improvements&#34;&gt;Machine Survey and Improvements&lt;/h2&gt;
+&lt;p&gt;After the first analysis and measurement session, the printer showed the following weaknesses in terms of noise emission:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic CLI&lt;/a&gt;:&lt;/strong&gt; Automatically import publications from BibTeX&lt;/li&gt;
+&lt;li&gt;Fans - Even without a systematic measurement, it is clear that the majority of the noise in a 3D printer comes from its fans. In particular, this machine has 4 fans in total, positioned in the following spots: motherboard, extruder, x-axis motor and power supply. The latter was the most problematic, since that fan was always running at full speed. This was caused by the power supply circuit, which has the space dedicated to a mechanical thermostat, but the component was removed and the poles jumped. So, I installed a normally open KSD9700 thermostat in the location and placed inside the large coil. The switch on the thermostat is designed to close if the temperature exceeds 45 degrees Celsius, which is a default conguration for this type of power supply.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://wowchemy.com/user-stories/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
-&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-position-of-the-switching-thermostat-installed-in-the-power-supply&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/power-supply-thermo.jpg&#34; alt=&#34;Position of the switching thermostat installed in the power supply.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Position of the switching thermostat installed in the power supply.
+    &lt;/figcaption&gt;&lt;/figure&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://wowchemy.com/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://wowchemy.com/docs/import/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://wowchemy.com/docs/install-locally/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://wowchemy.com/docs/customization/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 34+ language packs including English, 中文, and Português&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
+&lt;li&gt;Motor dampers - The printer under test uses 5 Nema17 stepper motors, which is one of the most common and cheap solutions in the field. Despite their cost, popularity, and performance, these motors are particularly loud, especially when coupled with low resolution controllers
+like the DRV8825 IC. To address this potential issue, I decided to install mechanical dampers between the motor and the 3D printer frame.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
-&lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
-&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
-&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-installation-of-the-motor-dampers&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/motors.png&#34; alt=&#34;Installation of the motor dampers.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Installation of the motor dampers.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;ul&gt;
+&lt;li&gt;Bearings - Another potential source of noise and vibration was found in the linear bearings of the y-axis. These three bearings allow the heated bed to move without friction along the cylindrical rails. In the original design of the printer, they were spherical bearings, which require lower tolerances to work, but are prone to lose performance over time. They have been substituted by self-lubricating polymer bearing, which have no moving parts, and therefore are quieter, more precise and durable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;results&#34;&gt;Results&lt;/h2&gt;
+&lt;p&gt;All considered, this project is satisfactory: the data show improvements in most of the tested modes. After processing the raw data according to the relative standards, I plotted the before/after comparisons. Moreover, I&amp;rsquo;ve found out that a CM-01B contact microphone can&amp;rsquo;t be used to collect reliable vibration data!&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-comparison-between-the-data-collected-with-the-cm-01b-for-the-y-axis&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/contact-mic-results.png&#34; alt=&#34;Comparison between the data collected with the CM-01B for the y-axis.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Comparison between the data collected with the CM-01B for the y-axis.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;Apart from this finding, the other procedures show significant improvements on the noise emitted by the 3D printer. As you can se by the following graph, I was able to isolate and reduce specific frequencies in the machine (in this example, the peak at around 1000 Hz corresponds to cooling fan of the power supply).&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-airborne-sound-power-level-for-test-routine-a&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/noise-3d-printer/plot-3-test-routine-a.png&#34; alt=&#34;Airborne sound power level for test routine a.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Airborne sound power level for test routine a.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;Thanks for reading! In case you want to take a deeper look at this project and at the results, you can find it &lt;a href=&#34;https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer#fullTextFileContent&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>3D Printed Acoustic Absorbers</title>
+      <link>https://s-gregorini003.github.io/project/3d-printed-absorbers/</link>
+      <pubDate>Wed, 10 Jun 2020 08:45:42 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/project/3d-printed-absorbers/</guid>
+      <description>&lt;p&gt;This blog post is to summarise a research project conducted at the beginning of 2019 as part of the Advanced Audio Engineering module (MSc Audio Engineering, Leeds Beckett University). The project discusses the potential of achieving high performance in terms of sound absorption through additive manufacturing techniques.&lt;/p&gt;
+&lt;p&gt;The absorbers are designed to exploit the principle of passive destructive interference (PDI) and manufactured using a commercially available fused deposition modeling (FDM) 3D printer. The specimen are cylindrical and produced with cavities of different lengths. The absorption coefficient is evaluated using an impedance tube and following the specifications of the standard &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail?pid=000000000030069842&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 10534-2:2001&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The results show that significant sound absorption can be achieved, although some absorption peaks do not match the expected frequencies. This may be caused by turbulence and resonance phenomena, especially in samples with greater diameter of the cavity. Futher investigation is required, but the potential of these technologies in terms of efficiency over manufacturing cost and absorber size is undoubted.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
+&lt;p&gt;The aim of the project is to design and manufacture Passive Destructive Interference (PDI) absorbers using Additive Manufacturing (AM) techniques and then to evaluate their performance through a low cost, self-built impedance tube. The main outcome of the measurement process is a set of diagrams of the normal absorption factor of the specimens as a function of frequency in a mid-low spectrum range. The sound absorption curves will be then analyzed to determine the effects of the tested geometries and to verify if the experimental results agree with the values expected from the samples in the design phase.&lt;/p&gt;
+&lt;h2 id=&#34;theory-and-methodology&#34;&gt;Theory and Methodology&lt;/h2&gt;
+&lt;p&gt;The investigated devices are designed to absorb specific frequencies through passive destructive interference. These frequencies depend mainly on the specimen&amp;rsquo;s geometry, and can be calculated in advance through the following equation&lt;/p&gt;
+&lt;p&gt;$$f_n = \frac{(2n - 1)* c}{2L}$$&lt;/p&gt;
+&lt;p&gt;where &lt;em&gt;L&lt;/em&gt; (m) is the length of the cavity and &lt;em&gt;c&lt;/em&gt; (m/s) is the speed of sound in the air.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-specification-and-design-of-a-specimen&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/sample-A-specs.png&#34; alt=&#34;Specification and design of a specimen.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Specification and design of a specimen.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;I designed the samples in SolidWorks and manufactured with an AthorBot Brother Desktop 3D Printer. To test different materials, both geometries were printed in ABS and PETG.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-two-specimen-used-for-measurement&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/specimen1.jpg&#34; alt=&#34;Two specimen used for measurement.&#34; loading=&#34;lazy&#34; data-zoomable width=&#34;600px&#34; /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Two specimen used for measurement.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;The measurement of the absorption coefficient was conducted according to the &lt;em&gt;two-micophone technique&lt;/em&gt; detailed in &lt;a href=&#34;https://shop.bsigroup.com/ProductDetail?pid=000000000030069842&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;BS EN ISO 10534-2:2001&lt;/a&gt;. The biggest issue faced in this project was to find an impedance tube to conduct the evaluation. Since my university had part of the equipment (microphones, soundcard, speakers&amp;hellip;), in the end I decided to build a low-cost impedance tube. I built it out of pvc pipes, hydraulic seals, and I added an Arduino Uno with an OLED display and temperature/humidity sensors to keep track of the environmental conditions. To calibrate the tube and conduct the measuring process - which consisted in measuring the cross-transfer function and then calculating the absorption coefficient - I used the software &lt;a href=&#34;https://www.holmarc.com/softwares/impedance_tube_software.rar&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Holmarc Wave Analyzer 4C &lt;/a&gt;.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-measurement-test-equipment-layout&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/TestEquipmentDiagram.png&#34; alt=&#34;Measurement test equipment layout.&#34; loading=&#34;lazy&#34; data-zoomable width=&#34;800px&#34; /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Measurement test equipment layout.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;findings&#34;&gt;Findings&lt;/h2&gt;
+&lt;p&gt;For each specimen, measurements are taken in the frequency interval 100-3200 Hz. The normal sound absorption curves are analysed through the evaluation of two values:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The frequency of peak sound absorption&lt;/li&gt;
+&lt;li&gt;The frequency range between the values on both sides of the peak where half the peak sound absorption occurs.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Using those values, the effects of the tested geometries can be determined and compared to the expected theoretical values. The results show that significant sound absorption has been achieved. The sound absorption coefficient reaches values of 0.87 at peak frequencies in the range considered. However, it must be noted that the absorption bandwidth is relatively narrow and that many relatively lower peaks can be attributed to the unprofessional measuring equipment.&lt;/p&gt;
+&lt;p&gt;For example, the following figure shows that the predicted frequency of the peaks for sample A is respected mainly in the lower range, while they are slightly shifted in the mid-upper range considered, probably due to production defects in the specimen.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-measured-absorption-coefficient-for-sample-a-compared-to-predicted-peak-frequencies&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/project/3d-printed-absorbers/sample-A-results.png&#34; alt=&#34;Measured absorption coefficient for sample A compared to predicted peak frequencies.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      Measured absorption coefficient for sample A compared to predicted peak frequencies.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;hr&gt;
+&lt;p&gt;Thanks for reading! If you want to have a look at the full article, you can find it &lt;a href=&#34;https://www.researchgate.net/publication/343628647_Measurement_of_the_Absorption_Coefficient_for_Destructive_Interference_Absorbers_Produced_by_Additive_Manufacturing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.researchgate.net/publication/281005456_Sound_absorption_and_additive_manufacturing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Sound absorption and additive manufacturing&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://www.emerald.com/insight/content/doi/10.1108/13552540710824805/full/html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Implications of solid freeform fabrication on acoustic absorbers&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>volca_boy[1] // Initial Design</title>
+      <link>https://s-gregorini003.github.io/post/volca-boy-1/</link>
+      <pubDate>Sun, 31 May 2020 18:01:50 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/post/volca-boy-1/</guid>
+      <description>&lt;blockquote&gt;
+&lt;h2 id=&#34;important-notice&#34;&gt;IMPORTANT NOTICE&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Unfortunately, due to the Covid-19 pandemic, this project is currently paused.  The reason is that I had to leave my house in Leeds and temporarily return to my hometown in Italy, leaving most of my stuff in the UK. I really hope to go back as soon as possible and continue this journey.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;do-more-with-less&#34;&gt;Do More, with Less&lt;/h3&gt;
+&lt;p&gt;For those unfamiliar with the term, &lt;em&gt;chiptune&lt;/em&gt; (also known as chipmusic, micromusic or 8-bit music) is a style of electronic music derived from the sound chips that, in the first generation of computers and gaming consoles, were used to balance the processing power of generating sound effects and music from the CPU.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The primal micromusic spirit was to overcome limitations and wield them in wildly creative ways. - &lt;a href=&#34;https://twitter.com/fabiobortolotti/status/1267093927800139777&#34; title=&#34;Chiptune is dead. Here&amp;#39;s what I think.&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Fabio &amp;ldquo;Kenobit&amp;rdquo; Bortolotti&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Like everything nowadays, that definition can be interpreted in many ways. In its strictiest meaning, chiptune is used to refer to music created entirely from the original, vintage audio chips (nevertheless, modifications that do not alter the nature of the sound produced are &amp;ldquo;allowed&amp;rdquo;, but we&amp;rsquo;ll come back to this later). On the other hand, the broadest definition is more related to the aesthetics of the sound, rather then to the source generating it. In general, the philosophy behind the chiptune movement is to exploit the limited resources of the hardware to create more and more articulated music.&lt;/p&gt;
+&lt;h3 id=&#34;dmg-01&#34;&gt;DMG-01&lt;/h3&gt;
+&lt;p&gt;With its four audio channels, the &lt;em&gt;Game Boy&lt;/em&gt; is supposedly the most popular tool for the production of micromusic. This console has been around for quite some time (Nintendo released it in 1989), and over the course of the years many people created and documented mods to equip it with useful features for the cause, such as better audio, rechargeable battery, backlit screen&amp;hellip;&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;Channel&lt;/th&gt;
+&lt;th&gt;Type&lt;/th&gt;
+&lt;th&gt;Features&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;1&lt;/td&gt;
+&lt;td&gt;Pulse&lt;/td&gt;
+&lt;td&gt;Volume envelope, 4-mode pulse width, frequency register from C3 upwards, frequency envelope&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;2&lt;/td&gt;
+&lt;td&gt;Pulse&lt;/td&gt;
+&lt;td&gt;Volume envelope, 4-mode pulse width, frequency register from C3 upwards&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;3&lt;/td&gt;
+&lt;td&gt;Wave&lt;/td&gt;
+&lt;td&gt;User-definable waveforms, bank of 32 samples (4-bit each), frequency register from C2 upwards&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;4&lt;/td&gt;
+&lt;td&gt;Noise&lt;/td&gt;
+&lt;td&gt;White and brown noise&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;What I want to do with this project is to use some of these mods as a starting point to transform that portable device into a proper music production tool, without over-denaturing its essence.&lt;/p&gt;
+&lt;h3 id=&#34;first-design&#34;&gt;First Design&lt;/h3&gt;
+&lt;p&gt;Initially, I started this project as a university assignment, which is why I was able to document everything in detail (specifically, in this &lt;a href=&#34;https://github.com/s-gregorini003/interfaces-and-interactivity&#34; title=&#34;Interfaces and Interactivity&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Github repo&lt;/a&gt;). Back then, my idea was to tear apart a Game Boy, rewire it from the inside to a different controls and put everything into a new, original case.&lt;/p&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-3d-model-made-with-solidworks-to-show-the-exploded-view-of-the-final-product&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://s-gregorini003.github.io/post/volca-boy-1/volca-boy-exploded-view.png&#34; alt=&#34;3D model made with SolidWorks to show the exploded view of the final product.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      3D model made with SolidWorks to show the exploded view of the final product.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;p&gt;Unfortunately, towards the end of the semester I realised that creating a custom shell for my product was a task way harder than expected. So, after many stressful weeks, I decided - in accordance with my lecturers - to give up with the enclosure and present only a working prototype. Anyway, the exam went well, but I still want to bring this project to an end.&lt;/p&gt;
+&lt;h2 id=&#34;references&#34;&gt;References&lt;/h2&gt;
+&lt;p&gt;Collins, K. and Kapralos, B. and Tessler, H. and Paul, J. L. (2014) &lt;em&gt;The Oxford Handbook of Interactive Audio.&lt;/em&gt; Oxford: Oxford University Press.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>volca_boy[0] // Project Summary</title>
+      <link>https://s-gregorini003.github.io/project/volca-boy-0/</link>
+      <pubDate>Sun, 03 May 2020 16:13:46 +0000</pubDate>
+      <guid>https://s-gregorini003.github.io/project/volca-boy-0/</guid>
+      <description>&lt;blockquote&gt;
+&lt;h2 id=&#34;important-notice&#34;&gt;IMPORTANT NOTICE&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Unfortunately, due to the Covid-19 pandemic, this project is currently paused. The reason is that I had to leave my house in Leeds and temporarily return to my hometown in Italy, leaving most of my stuff in the UK. I really hope to go back as soon as possible and continue this journey.&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Volca Boy is a modding project aimed at turning a 1989 Game Boy into a portable synthesizer/sequencer. Although most of the work is original and designed by me, I borrowed some mods and code from other open source projects. In that case, I will give all the necessary credits to the modders from which I borrowed. This project is open source too, so feel free to try it, modify it, add and remove things to it as you like.&lt;/p&gt;
+&lt;p&gt;The links will appear as the project progresses and the steps get documented.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;https://s-gregorini003.github.io/post/volca-boy-1/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Intro&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Mods Overview&lt;/li&gt;
+&lt;li&gt;Software&lt;/li&gt;
+&lt;li&gt;Hardware - Electrical&lt;/li&gt;
+&lt;li&gt;Hardware - Case&lt;/li&gt;
+&lt;li&gt;Demo&lt;/li&gt;
+&lt;/ol&gt;
 </description>
     </item>
     
     <item>
       <title>Slides</title>
-      <link>/slides/example/</link>
+      <link>https://s-gregorini003.github.io/slides/example/</link>
       <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
-      <guid>/slides/example/</guid>
+      <guid>https://s-gregorini003.github.io/slides/example/</guid>
       <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
 &lt;hr&gt;
@@ -239,23 +747,10 @@ Three
     </item>
     
     <item>
-      <title>Example Project</title>
-      <link>/project/example/</link>
-      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>/project/example/</guid>
-      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
-&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
-&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
-&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
-&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
       <title>An example conference paper</title>
-      <link>/publication/example/</link>
+      <link>https://s-gregorini003.github.io/publication/example/</link>
       <pubDate>Mon, 01 Jul 2013 00:00:00 +0000</pubDate>
-      <guid>/publication/example/</guid>
+      <guid>https://s-gregorini003.github.io/publication/example/</guid>
       <description>&lt;div class=&#34;alert alert-note&#34;&gt;
   &lt;div&gt;
     Click the &lt;em&gt;Cite&lt;/em&gt; button above to demo the feature to enable visitors to import publication metadata into their reference management software.
@@ -272,9 +767,9 @@ Three
     
     <item>
       <title></title>
-      <link>/admin/config.yml</link>
+      <link>https://s-gregorini003.github.io/admin/config.yml</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>/admin/config.yml</guid>
+      <guid>https://s-gregorini003.github.io/admin/config.yml</guid>
       <description></description>
     </item>
     

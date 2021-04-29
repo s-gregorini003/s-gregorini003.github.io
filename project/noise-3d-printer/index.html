@@ -1,0 +1,1487 @@
+<!DOCTYPE html><html lang="en-us" >
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  
+  
+  
+    <meta name="generator" content="Wowchemy 5.1.0 for Hugo" />
+  
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Silvio Gregorini" />
+
+  
+  
+  
+    
+  
+  <meta name="description" content="To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor. After 336 individual measures carried on during a stressful 72 hours period, I can show you the results." />
+
+  
+  <link rel="alternate" hreflang="en-us" href="https://s-gregorini003.github.io/project/noise-3d-printer/" />
+
+  
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+
+  
+  
+  
+    <meta name="theme-color" content="#2caac2" />
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha256-FMvZuGapsJLjouA6k7Eo2lusoAX9i0ShlWFG6qt7SLc=" crossorigin="anonymous">
+
+    
+    
+
+    
+    
+    
+      
+    
+    
+      
+      
+        
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github.min.css" crossorigin="anonymous" title="hl-light" media="print" onload="this.media='all'">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/dracula.min.css" crossorigin="anonymous" title="hl-dark" media="print" onload="this.media='all'" disabled>
+        
+      
+    
+
+    
+    
+    
+
+    
+
+    
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+      
+      
+
+      
+      
+
+      
+    
+  
+
+  
+  
+  
+    
+      
+      <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media="print" onload="this.media='all'">
+    
+  
+
+  
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/wowchemy.32627b0d732c704644305b44845ee462.css" />
+
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175164530-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+
+  function gtag() {
+      dataLayer.push(arguments);
+  }
+
+  function trackOutboundLink(url, target) {
+    gtag('event', 'click', {
+         'event_category': 'outbound',
+         'event_label': url,
+         'transport_type': 'beacon',
+         'event_callback': function () {
+           if (target !== '_blank') {
+             document.location = url;
+           }
+         }
+    });
+    console.debug("Outbound link clicked: " + url);
+  }
+
+  function onClickCallback(event) {
+    if ((event.target.tagName !== 'A') || (event.target.host === window.location.host)) {
+      return;
+    }
+    trackOutboundLink(event.target, event.target.getAttribute('target'));  
+  }
+
+  gtag('js', new Date());
+  gtag('config', 'UA-175164530-1', {});
+  gtag('set', {'cookie_flags': 'SameSite=None;Secure'});
+
+  
+  document.addEventListener('click', onClickCallback, false);
+</script>
+
+
+  
+
+  
+
+  
+
+
+
+
+  
+  
+  
+
+  
+
+  
+    <link rel="manifest" href="/index.webmanifest" />
+  
+
+  <link rel="icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png" />
+  <link rel="apple-touch-icon" type="image/png" href="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_180x180_fill_lanczos_center_2.png" />
+
+  <link rel="canonical" href="https://s-gregorini003.github.io/project/noise-3d-printer/" />
+
+  
+  
+  
+  
+  
+  
+  
+  
+    
+  
+  
+  <meta property="twitter:card" content="summary_large_image" />
+  
+  <meta property="og:site_name" content="Silvio Gregorini" />
+  <meta property="og:url" content="https://s-gregorini003.github.io/project/noise-3d-printer/" />
+  <meta property="og:title" content="Noise and Vibration Analysis of 3D Printers | Silvio Gregorini" />
+  <meta property="og:description" content="To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor. After 336 individual measures carried on during a stressful 72 hours period, I can show you the results." /><meta property="og:image" content="https://s-gregorini003.github.io/project/noise-3d-printer/featured.png" />
+    <meta property="twitter:image" content="https://s-gregorini003.github.io/project/noise-3d-printer/featured.png" /><meta property="og:locale" content="en-us" />
+  
+    
+      <meta
+        property="article:published_time"
+        content="2020-06-18T08:45:42&#43;00:00"
+      />
+    
+    <meta property="article:modified_time" content="2020-06-18T08:45:42&#43;00:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://s-gregorini003.github.io/project/noise-3d-printer/"
+  },
+  "headline": "Noise and Vibration Analysis of 3D Printers",
+  
+  "image": [
+    "https://s-gregorini003.github.io/project/noise-3d-printer/featured.png"
+  ],
+  
+  "datePublished": "2020-06-18T08:45:42Z",
+  "dateModified": "2020-06-18T08:45:42Z",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Silvio Gregorini"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Silvio Gregorini",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://s-gregorini003.github.io/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor. After 336 individual measures carried on during a stressful 72 hours period, I can show you the results."
+}
+</script>
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+  <title>Noise and Vibration Analysis of 3D Printers | Silvio Gregorini</title>
+</head>
+
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="page-wrapper   " data-wc-page-id="4fec15f12e628f291b2e409a134d66e2" >
+
+  
+  
+  
+  
+  
+  
+  
+  
+  <script src="/js/wowchemy-init.min.226a9011996d125bf3fe4a5f22353a49.js"></script>
+
+  
+
+
+<aside class="search-modal" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#" aria-label="Close"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        <input name="q" id="search-query" placeholder="Search..." autocapitalize="off"
+        autocomplete="off" autocorrect="off" spellcheck="false" type="search" class="form-control"
+        aria-label="Search...">
+        
+      </div>
+
+      
+      
+
+      
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+
+  <div class="page-header">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container-xl">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Silvio Gregorini</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Silvio Gregorini</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#about"><span>Home</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#projects"><span>Projects</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#talks"><span>Talks</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#featured"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+
+        
+        
+        
+        
+
+        
+          
+            
+            
+          
+          
+            
+            
+            
+              
+            
+            
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#contact"><span>Contact</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+
+      
+      
+        
+      
+
+      
+      
+      <li class="nav-item">
+        <a class="nav-link js-search" href="#" aria-label="Search"><i class="fas fa-search" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+      
+      <li class="nav-item dropdown theme-dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown" aria-haspopup="true" aria-label="Display preferences">
+          <i class="fas fa-moon" aria-hidden="true"></i>
+        </a>
+        <div class="dropdown-menu">
+          <a href="#" class="dropdown-item js-set-theme-light">
+            <span>Light</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-dark">
+            <span>Dark</span>
+          </a>
+          <a href="#" class="dropdown-item js-set-theme-auto">
+            <span>Automatic</span>
+          </a>
+        </div>
+      </li>
+      
+
+      
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  </div>
+
+  <div class="page-body">
+    <article class="article article-project">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+
+<div class="article-container pt-3">
+  <h1>Noise and Vibration Analysis of 3D Printers</h1>
+
+  
+  <p class="page-subtitle">How to Evaluate Airborne and Structure-borne Noise without the Right Tools</p>
+  
+
+  
+
+
+<div class="article-metadata">
+
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    18 Jun, 2020
+  </span>
+  
+
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+  
+
+</div>
+
+  
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+    
+  
+
+
+
+<a class="btn btn-outline-primary btn-page-header" href="https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer" target="_blank" rel="noopener">
+  PDF
+</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+</div>
+
+
+<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 720px; max-height: 360px;">
+  <div style="position: relative">
+    <img src="/project/noise-3d-printer/featured_hufc48785eb27b9d5c64be81f325af45ce_339281_720x0_resize_lanczos_2.png" alt="" class="featured-image">
+    <span class="article-header-caption">Detail of the Y-axis</span>
+  </div>
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <p>This post is on a project made at the beginning 2020 in which I had to analyse and mitigate the noise emitted by a desktop 3D printer. Here I cover the methodology used to conduct the measurements, which differs a bit from the standards, given the limited equipment available.</p>
+<h3 id="tldr">TL;DR</h3>
+<p>To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor, without the option to collect either octave band or one-third-octave band measurements. After 336 individual measures (144 with the vibration sensor + 144 with a contact microphone + 48 with NTi Audio sound level meters) carried on during a stressful 72 hours period, the results showed that the changes applied to the machine improved its noise emission. However, part of the instrumentation used (the CM-01B contact microphone) proved unsuitable for conducting the measuring process.</p>
+<hr>
+<h2 id="methodology">Methodology</h2>
+<p><strong>Test routines</strong> - I coded four G-Code procedures for tests reproducibility, numbered to match the name conventions on the collected data. Obviously, routine 1 and 2 do not require any G-Code file, since the 3D printer is not moving.</p>
+<ol>
+<li>Background noise;</li>
+<li>Source idling;</li>
+<li>Source with simulated load, under normal working conditions (<code>test-routine-a.gcode</code>);</li>
+<li>Source at maximum operating speed (<code>test-routine-c-full-speed.gcode</code>);</li>
+<li>Source working under conditions corresponding to maximum sound generation
+representative of normal use (<code>specimen-d-infill-only.gcode</code>);</li>
+<li>Source undergoing a charateristic work cycle (<code>specimen.gcode</code>);</li>
+</ol>
+<p><strong>Structure-borne sound</strong> - As I said previously, this set of tests couldn&rsquo;t be conducted according to the standard <a href="https://shop.bsigroup.com/ProductDetail/?pid=000000000000942052" target="_blank" rel="noopener">BS ISO 9611:1996</a>, but I tried to follow the procedure as far as possible. I collected 3-axis measurements on each of the 4 predefined supports and for each routine, using both the contact microphone CM-01B and the vibration meter Bruel &amp; Kjaer 2537: the former returned Z-weighted sound pressure level in one-thirdoctave bands (from 20 Hz to 20 kHz), while the latter a single acceleration value. Both were time-averaged over each routine duration.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-setup-to-measure-structure-borne-sound-on-the-z-axis">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/project/noise-3d-printer/struc-support-4-z-axis.jpg" alt="Setup to measure structure-borne sound on the z-axis." loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Setup to measure structure-borne sound on the z-axis.
+    </figcaption></figure>
+<p><strong>Airborne sound</strong> - On the other hand, I could perform this tests according to <a href="https://shop.bsigroup.com/ProductDetail?pid=000000000030276993" target="_blank" rel="noopener">BS EN ISO 1680:2013</a> and <a href="https://shop.bsigroup.com/ProductDetail/?pid=000000000030094857" target="_blank" rel="noopener">BS EN ISO 3746:2010</a>. For this test, I conducted 6 measurements at each of the 4 microphone positions outlined by the standards, before and after the changes. The collected data were A-weighted sound pressure levels in one-third-octave-bands (from 20 Hz to 20 kHz), time-averaged over the routine average duration.</p>
+<h2 id="machine-survey-and-improvements">Machine Survey and Improvements</h2>
+<p>After the first analysis and measurement session, the printer showed the following weaknesses in terms of noise emission:</p>
+<ul>
+<li>Fans - Even without a systematic measurement, it is clear that the majority of the noise in a 3D printer comes from its fans. In particular, this machine has 4 fans in total, positioned in the following spots: motherboard, extruder, x-axis motor and power supply. The latter was the most problematic, since that fan was always running at full speed. This was caused by the power supply circuit, which has the space dedicated to a mechanical thermostat, but the component was removed and the poles jumped. So, I installed a normally open KSD9700 thermostat in the location and placed inside the large coil. The switch on the thermostat is designed to close if the temperature exceeds 45 degrees Celsius, which is a default conguration for this type of power supply.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-position-of-the-switching-thermostat-installed-in-the-power-supply">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/project/noise-3d-printer/power-supply-thermo.jpg" alt="Position of the switching thermostat installed in the power supply." loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Position of the switching thermostat installed in the power supply.
+    </figcaption></figure>
+<ul>
+<li>Motor dampers - The printer under test uses 5 Nema17 stepper motors, which is one of the most common and cheap solutions in the field. Despite their cost, popularity, and performance, these motors are particularly loud, especially when coupled with low resolution controllers
+like the DRV8825 IC. To address this potential issue, I decided to install mechanical dampers between the motor and the 3D printer frame.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-installation-of-the-motor-dampers">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/project/noise-3d-printer/motors.png" alt="Installation of the motor dampers." loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Installation of the motor dampers.
+    </figcaption></figure>
+<ul>
+<li>Bearings - Another potential source of noise and vibration was found in the linear bearings of the y-axis. These three bearings allow the heated bed to move without friction along the cylindrical rails. In the original design of the printer, they were spherical bearings, which require lower tolerances to work, but are prone to lose performance over time. They have been substituted by self-lubricating polymer bearing, which have no moving parts, and therefore are quieter, more precise and durable.</li>
+</ul>
+<h2 id="results">Results</h2>
+<p>All considered, this project is satisfactory: the data show improvements in most of the tested modes. After processing the raw data according to the relative standards, I plotted the before/after comparisons. Moreover, I&rsquo;ve found out that a CM-01B contact microphone can&rsquo;t be used to collect reliable vibration data!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-comparison-between-the-data-collected-with-the-cm-01b-for-the-y-axis">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/project/noise-3d-printer/contact-mic-results.png" alt="Comparison between the data collected with the CM-01B for the y-axis." loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Comparison between the data collected with the CM-01B for the y-axis.
+    </figcaption></figure>
+<p>Apart from this finding, the other procedures show significant improvements on the noise emitted by the 3D printer. As you can se by the following graph, I was able to isolate and reduce specific frequencies in the machine (in this example, the peak at around 1000 Hz corresponds to cooling fan of the power supply).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<figure  id="figure-airborne-sound-power-level-for-test-routine-a">
+  <div class="d-flex justify-content-center">
+    <div class="w-100" ><img src="/project/noise-3d-printer/plot-3-test-routine-a.png" alt="Airborne sound power level for test routine a." loading="lazy" data-zoomable /></div>
+  </div><figcaption>
+      Airborne sound power level for test routine a.
+    </figcaption></figure>
+<hr>
+<p>Thanks for reading! In case you want to take a deeper look at this project and at the results, you can find it <a href="https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer#fullTextFileContent" target="_blank" rel="noopener">here</a>.</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+<div class="article-tags">
+  
+  <a class="badge badge-light" href="/tag/acoustics/">Acoustics</a>
+  
+  <a class="badge badge-light" href="/tag/3d-printing/">3D Printing</a>
+  
+</div>
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=https://s-gregorini003.github.io/project/noise-3d-printer/&amp;text=Noise%20and%20Vibration%20Analysis%20of%203D%20Printers" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=https://s-gregorini003.github.io/project/noise-3d-printer/&amp;t=Noise%20and%20Vibration%20Analysis%20of%203D%20Printers" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Noise%20and%20Vibration%20Analysis%20of%203D%20Printers&amp;body=https://s-gregorini003.github.io/project/noise-3d-printer/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=https://s-gregorini003.github.io/project/noise-3d-printer/&amp;title=Noise%20and%20Vibration%20Analysis%20of%203D%20Printers" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="whatsapp://send?text=Noise%20and%20Vibration%20Analysis%20of%203D%20Printers%20https://s-gregorini003.github.io/project/noise-3d-printer/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=https://s-gregorini003.github.io/project/noise-3d-printer/&amp;title=Noise%20and%20Vibration%20Analysis%20of%203D%20Printers" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+  
+  
+    
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+      
+      <a href="https://s-gregorini003.github.io"><img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huda66547e93379df48df9f4e88e7828b2_191293_270x270_fill_q75_lanczos_center.jpeg" alt="Silvio Gregorini"></a>
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="https://s-gregorini003.github.io">Silvio Gregorini</a></h5>
+      <h6 class="card-subtitle">Research &amp; Development Engineer</h6>
+      <p class="card-text">My interests include game audio programming, creative computing and machine learning.</p>
+      <ul class="network-icon" aria-hidden="true">
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+    <li>
+      <a href="mailto:silvio.gregorini@outlook.com" >
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://twitter.com/s_gregorini003" target="_blank" rel="noopener">
+        <i class="fab fa-twitter"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://github.com/s-gregorini003" target="_blank" rel="noopener">
+        <i class="fab fa-github"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="https://www.linkedin.com/in/s-gregorini003/" target="_blank" rel="noopener">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </li>
+  
+    
+    
+    
+    
+    
+    
+    
+      
+    
+    <li>
+      <a href="/media/silvio-gregorini-cv-2021-04.pdf" >
+        <i class="ai ai-cv"></i>
+      </a>
+    </li>
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <div class="article-widget content-widget-hr">
+    <h3>Related</h3>
+    <ul>
+      
+      <li><a href="/project/3d-printed-absorbers/">3D Printed Acoustic Absorbers</a></li>
+      
+    </ul>
+  </div>
+  
+
+
+
+
+
+    <div class="project-related-pages content-widget-hr">
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+
+      
+      
+      
+    </div>
+  </div>
+</article>
+  </div>
+
+  <div class="page-footer">
+    
+    
+    <div class="container">
+      <footer class="site-footer">
+
+  
+
+  
+
+  <p class="powered-by">
+    Silvio Gregorini © 2021
+  </p>
+
+  
+  
+
+
+
+
+
+
+  <p class="powered-by">
+    
+    
+    
+      
+      
+      
+      
+      
+      
+      Published with <a href="https://wowchemy.com/?utm_campaign=poweredby" target="_blank" rel="noopener">Wowchemy</a> — the free, <a href="https://github.com/wowchemy/wowchemy-hugo-modules" target="_blank" rel="noopener">open source</a> website builder that empowers creators.
+    
+  </p>
+</footer>
+
+    </div>
+    
+  </div>
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/instant.page/5.1.0/instantpage.min.js" integrity="sha512-1+qUtKoh9XZW7j+6LhRMAyOrgSQKenQ4mluTR+cvxXjP1Z54RxZuzstR/H9kgPXQsVB8IW7DMDFUJpzLjvhGSQ==" crossorigin="anonymous"></script>
+
+      
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      
+
+      
+      
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+    
+
+    
+    
+
+    
+    
+    
+      
+      <script id="search-hit-fuse-template" type="text/x-template">
+        <div class="search-hit" id="summary-{{key}}">
+          <div class="search-hit-content">
+            <div class="search-hit-name">
+              <a href="{{relpermalink}}">{{title}}</a>
+              <div class="article-metadata search-hit-type">{{type}}</div>
+              <p class="search-hit-description">{{snippet}}</p>
+            </div>
+          </div>
+        </div>
+      </script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/3.2.1/fuse.min.js" integrity="sha256-VzgmKYmhsGNNN4Ph1kMW+BjoYJM2jV5i4IlFoeZA9XI=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+      
+    
+
+    
+    
+
+    
+    
+    
+    
+
+    
+    <script src="/js/bootstrap.bundle.min.6aed84840afc03ab4d5750157f69c120.js"></script>
+
+    
+    
+      
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+      
+      
+    
+    
+    <script src="/en/js/wowchemy.min.b61a8f62b6e5c0cd322c8158c5b5dfb6.js"></script>
+
+    
+
+
+
+
+
+
+</body>
+</html>
