@@ -1,43 +1,26 @@
 ---
-title: "volca_boy[1] // Initial Design"
-date: "2020-05-31T18:01:50Z"
-draft: false
-
-# Summary for listings and search engines
+title: volca_boy[1] // Initial Design
+date: 2020-05-31T18:01:50Z
+draft: true
 summary: Just a brief introduction of the project, focusing on its components and the initial design.
-
-# Link this post with a project
-projects: [volca-boy-0]
-
-
-# Date updated
+projects:
+  - volca-boy-0
 lastmod: ""
-
-# Is this an unpublished draft?
-draft: false
-
-# Show this page in the Featured widget?
 featured: false
-
-# Featured image
-# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
 image:
-  caption: 'First 3D render of the product'
+  caption: First 3D render of the product
   focal_point: Smart
   placement: 1
   preview_only: false
-
 authors:
-- admin
-
+  - admin
 tags:
-- Music
-- Electronics
-- Programming
-
+  - Music
+  - Electronics
+  - Programming
 categories:
-- Chiptune
-- Music
+  - Chiptune
+  - Music
 ---
 
 > ## IMPORTANT NOTICE

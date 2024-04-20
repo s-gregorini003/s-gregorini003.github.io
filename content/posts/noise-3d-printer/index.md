@@ -1,36 +1,21 @@
 ---
-title: "Noise and Vibration Analysis of 3D Printers"
-subtitle: "How to Evaluate Airborne and Structure-borne Noise without the Right Tools"
+title: Noise and Vibration Analysis of 3D Printers
+subtitle: How to Evaluate Airborne and Structure-borne Noise without the Right Tools
 summary: To evaluate the structure-borne sound, the only calibrated instrument I could find was an old, single-axis vibration sensor. After 336 individual measures carried on during a stressful 72 hours period, I can show you the results.
 tags:
-- Acoustics
-- 3D Printing
-date: "2020-06-18T08:45:42Z"
-draft: false 
-
-# Optional external URL for project (replaces project detail page).
+  - Acoustics
+  - 3D
+  - Printing
+date: 2020-06-18T08:45:42Z
+draft: true
 external_link: ""
-
 image:
   caption: Detail of the Y-axis
   focal_point: Smart
-
-# links:
-# - icon: researchgate
-#   icon_pack: fab
-#   name: Article
-#   url: https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer
 url_code: ""
-url_pdf: "https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer"
+url_pdf: https://www.researchgate.net/publication/343628653_Evaluation_and_Mitigation_of_Airborne_and_Structure-borne_Noise_Emitted_by_3D_Printer
 url_slides: ""
 url_video: ""
-
-# Slides (optional).
-#   Associate this project with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
-# slides: example
 ---
 
 This post is on a project made at the beginning 2020 in which I had to analyse and mitigate the noise emitted by a desktop 3D printer. Here I cover the methodology used to conduct the measurements, which differs a bit from the standards, given the limited equipment available.

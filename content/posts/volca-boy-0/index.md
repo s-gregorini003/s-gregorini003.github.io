@@ -1,25 +1,24 @@
 ---
-title: "volca_boy[0] // Project Summary"
-subtitle: "Something Between an Action Plan and a Table of Contents"
+title: volca_boy[0] // Project Summary
+subtitle: Something Between an Action Plan and a Table of Contents
 summary: A modding project aimed at turning a 1989 Game Boy into a portable synthesizer/sequencer. The product will be based on the Korg volca Series form factor, and aims at unlocking cyberpunk functionalities into the chiptune realm.
 tags:
-- Music
-- Electronics
-- Programming
-date: "2020-05-03T16:13:46Z"
-draft: false 
+  - Music
+  - Electronics
+  - Programming
+date: 2020-05-03T16:13:46Z
+draft: true
 image:
   caption: Detail of the boot screen
   focal_point: Smart
-
 links:
-- icon: youtube
-  icon_pack: fab
-  name: Video
-  url: https://www.youtube.com/watch?v=bqH_C2uOkg4&t=9s
+  - icon: youtube
+    icon_pack: fab
+    name: Video
+    url: https://www.youtube.com/watch?v=bqH_C2uOkg4&t=9s
 categories:
-- Chiptune
-- Music
+  - Chiptune
+  - Music
 ---
 
 > ## IMPORTANT NOTICE

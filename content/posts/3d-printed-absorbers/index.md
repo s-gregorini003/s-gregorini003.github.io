@@ -1,36 +1,22 @@
 ---
-title: "3D Printed Acoustic Absorbers"
-subtitle: "Design, Production and Evaluation of PDI Absorbers"
-summary: "An investigation on the potential of achieving high performance in terms of sound absorption through additive manufacturing techniques. I built a low-cost impedance tube, too."
+title: 3D Printed Acoustic Absorbers
+subtitle: Design, Production and Evaluation of PDI Absorbers
+summary: An investigation on the potential of achieving high performance in terms of sound absorption through additive manufacturing techniques. I built a low-cost impedance tube, too.
 tags:
-- Acoustics
-- 3D Printing
-- Electronics
-date: "2020-06-10T08:45:42Z"
+  - Acoustics
+  - 3D
+  - Printing
+  - Electronics
+date: 2020-06-10T08:45:42Z
 math: true
-draft: false
-
+draft: true
 image:
-  caption: Measurement setup 
+  caption: Measurement setup
   focal_point: Smart
-
-# links:
-# - icon: researchgate
-#   icon_pack: fab
-#   name: Article
-#   url: "https://www.researchgate.net/publication/343628647_Measurement_of_the_Absorption_Coefficient_for_Destructive_Interference_Absorbers_Produced_by_Additive_Manufacturing"
-  
 url_code: ""
-url_pdf: "https://www.researchgate.net/publication/343628647_Measurement_of_the_Absorption_Coefficient_for_Destructive_Interference_Absorbers_Produced_by_Additive_Manufacturing"
+url_pdf: https://www.researchgate.net/publication/343628647_Measurement_of_the_Absorption_Coefficient_for_Destructive_Interference_Absorbers_Produced_by_Additive_Manufacturing
 url_slides: ""
 url_video: ""
-
-# Slides (optional).
-#   Associate this project with Markdown slides.
-#   Simply enter your slide deck's filename without extension.
-#   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
-#   Otherwise, set `slides = ""`.
-# slides: example
 ---
 
 This blog post is to summarise a research project conducted at the beginning of 2019 as part of the Advanced Audio Engineering module (MSc Audio Engineering, Leeds Beckett University). The project discusses the potential of achieving high performance in terms of sound absorption through additive manufacturing techniques.
