@@ -1,5 +1,5 @@
 ---
-title: Why you should use your pocket notebook as a coaster
+title: Use your pocket notebook as a coaster
 summary: A small tale of how an insignificant example repeated in a bunch of YouTube videos made me significantly improve my note-taking habit. Now I carry with me a pocket notebook everywhere I go, and I can take quick notes without any friction.
 tags: 
 date: 2024-04-14T17:32:16
